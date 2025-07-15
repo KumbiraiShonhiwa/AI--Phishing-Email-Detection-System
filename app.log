@@ -1,0 +1,9 @@
+2025-05-17 10:37:45,261 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-17 10:37:45,262 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-17 10:37:49,991 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 10:37:49] "GET / HTTP/1.1" 200 -
+2025-05-17 10:37:50,150 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 10:37:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-17 10:38:08,621 - __main__ - INFO - Successfully processed 1 emails
+2025-05-17 10:38:08,622 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 10:38:08] "POST /predict HTTP/1.1" 200 -
+2025-05-17 10:38:46,134 - __main__ - INFO - Successfully processed 1 emails
+2025-05-17 10:38:46,136 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 10:38:46] "POST /predict HTTP/1.1" 200 -

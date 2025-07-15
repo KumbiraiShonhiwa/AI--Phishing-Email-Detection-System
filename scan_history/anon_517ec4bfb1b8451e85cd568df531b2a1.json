@@ -1,0 +1,11 @@
+{
+  "scans": [
+    {
+      "id": "15fe97ec-b06b-425f-97e8-1990917181ff",
+      "timestamp": "2025-05-17T00:50:42.264665",
+      "email_excerpt": "pip install flask\npip install joblib\npip install scikit-learn\npip install pandas\npip install bleach\n",
+      "prediction": "Non-Phishing",
+      "confidence": 48
+    }
+  ]
+}

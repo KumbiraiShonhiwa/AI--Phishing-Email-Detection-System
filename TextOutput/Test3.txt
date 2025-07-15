@@ -1,0 +1,23 @@
+no-reply@accounts.google.com
+
+Security alert
+
+
+A new sign-in on Windows
+
+
+kumbiaresshonhiwa@gmail.com
+We noticed a new sign-in to your Google Account on a Windows device. If
+this was you, you don’t need to do anything. If not, we’ll help you secure
+your account.
+Check activity
+https://accounts.google.com/AccountChooser?Email=kumbiaresshonhiwa@gmail.com&continue=https://myaccount.google.com/alert/nt/1731104353216?rfn%3D325%26rfnc%3D1%26eid%3D-5037345969808739284%26et%3D0
+You can also see security activity at
+https://myaccount.google.com/notifications
+You received this email to let you know about important changes to your
+Google Account and services.
+© 2024 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+
+
+https://accounts.google.com/AccountChooser?Email=kumbiaresshonhiwa@gmail.com&continue=https://myaccount.google.com/alert/nt/1731104353216?rfn%3D325%26rfnc%3D1%26eid%3D-5037345969808739284%26et%3D0
+https://myaccount.google.com/notifications

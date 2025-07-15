@@ -1,0 +1,140 @@
+Delivered-To: kumbishonhiwa@gmail.com
+Received: by 2002:a05:7108:aa94:b0:40f:3178:2725 with SMTP id mh20csp1010010gdb;
+        Tue, 13 May 2025 19:28:25 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVQJZMOt8VUX2jaABzQZZX9uv/uLVqcxPAJk0IkW2toyTQcZZ1dbJwvEGfWmq4r7vFEHNww6xmuy/zW2zC5@gmail.com
+X-Google-Smtp-Source: AGHT+IHGocNZL4lWWsnFn3VJbo/ULquD4t6Rhv9u3R1PWm8kA2lpQjx+9+HRcn9unAij7puD38aC
+X-Received: by 2002:a05:6870:d68c:b0:2d4:c1f4:4309 with SMTP id 586e51a60fabf-2e2422cf44bmr1070495fac.0.1747189705023;
+        Tue, 13 May 2025 19:28:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1747189705; cv=none;
+        d=google.com; s=arc-20240605;
+        b=J/FURzmb8ocy+v+SW+hx8qn9w3fQOpF0gZpfu8UxjSLqnD6kej1DnijNAjbx2kn8Qy
+         mvqSRGyQcUmJDk/1VRcagnnWWsq/Mf9uJpXThlLG+ABY3yw8IJifKwoYdLFxAXH7iF41
+         lFH+xPbvVw+P5z9henSc1FablS7sH9LmvGbY0mMUG/6GGLoaATGGyYgNKKVF5hb/WOUL
+         r25vbN3mCdvu5lJMVKkErMgYOETer7Ai/EEh486szpknuSXV7/Juh00z/fooLDYS+lhT
+         f70xXYXdroOIDwoChFIQgPWW7QlIKnNRS/68wxnu6sythNB4yRio39OoNN4tjb47lMQe
+         0QHQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:envelope-to:date:subject:from:feedback-id:domainkey-signature
+         :dkim-signature:message-id;
+        bh=rHU+0ynozbpEzpn+RBzpS7ad+LTPEy+CR7KeLtyzSlk=;
+        fh=GMSS3jjCGonHKdIEfnKvsCy6Z0N1IFfgELPgutHS5/4=;
+        b=dFFlqaWlr/3L+DQwE9E7t06TasVTRKmpjpUJJ/PnWWOky8Despq6vX0N38Pnr8MdW8
+         Q8MtRQYqPIMsw5wgj3vEK5emdTDzM4X6aEg4LIjzIx95gxWv7PmPQg978r9X1+1295Re
+         B4jBoBHc9jHaHgl/2e6NFWvQD9SfT3llncGaQhsrZoRI3eMl2KlJPiXuwN8pHu2AYwoc
+         4MTO5t10PkfFCccxIaJgivfVmF6NCP7D+fjGBvOOKA78c+60qgeDcaz46MSal34dAyLa
+         ARlj4ws81r9AgjWasmhiM5eHzApm0BKuaW6EDMPoR4pwf6C4/gyHTmZFVvzxczX1R5XI
+         EkPw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=permerror (no key for signature) header.i=@questionprov72092.com header.s=050200 header.b=AO6m2bn0;
+       spf=pass (google.com: domain of bounceemail@sintsfd.me designates 147.124.217.53 as permitted sender) smtp.mailfrom=BounceEmail@sintsfd.me
+Return-Path: <BounceEmail@sintsfd.me>
+Received: from valuedprofessionals.nl (kronkytemark.lslindahl.com. [147.124.217.53])
+        by mx.google.com with ESMTPS id 586e51a60fabf-2dba06cd3e3si7611717fac.92.2025.05.13.19.28.24
+        for <kumbishonhiwa@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Tue, 13 May 2025 19:28:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounceemail@sintsfd.me designates 147.124.217.53 as permitted sender) client-ip=147.124.217.53;
+Authentication-Results: mx.google.com;
+       dkim=permerror (no key for signature) header.i=@questionprov72092.com header.s=050200 header.b=AO6m2bn0;
+       spf=pass (google.com: domain of bounceemail@sintsfd.me designates 147.124.217.53 as permitted sender) smtp.mailfrom=BounceEmail@sintsfd.me
+Message-ID: <6823ffc9.050a0220.29845a.617bSMTPIN_ADDED_MISSING@mx.google.com>
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=050200; d=questionprov72092.com;
+ h=From:Subject:Date:To:Content-Type; i=teamsupport-Kumbishonhiwa-8419904545815@questionprov72092.com;
+ bh=Z+sbotT1h5LLyM84rrSduvhU4vo=;
+ b=AO6m2bn0+nNo/9X/DmQ7Z2sXq7rq1N4ZpIag86ryxMg/+rrbgWIOgFg8iByYeez7aUH2Iylr2lmF
+   /PnMSPp2r+O83SB+UN5xCjcUZ+iynomu5qhQvuY/l0s9yWpCnCIE5N/AWZcqncn24QtiZdeLOmBS
+   NTUw7a2ipwPCPiWh6R1dalevP5bJcMpe3vQ3+Bu/sUcYGnvsObQhk9YlWYQzUGdI81mnhPuT8ioa
+   9cO/xqOgt1jshP3V9NDgoTFSr1Nb08nT4iS74530TVLtBVxkXVSz04Qbhpcz2IjAZtECgOv/9vSI
+   rILK8QnHYSLB9D/R2mSnDhc9r7GdMBG349A5dw==
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=050200; d=questionprov72092.com;
+ b=Uu5kqnYKiYlVxRFqUrtxeNffoDe+NnDQz2k/0xY8uFI3awMLjI/M5iUSgY6YAuI/v7DrJJEjbimV
+   eUDKWkeTnPuHcRG1TZ6eWDr5RRXtYazKQ0ssfIqYNh355B2EoZSwfdMT7viKasXtv4uLe93cnWrQ
+   yqbhyY6W5BelKAx8sWP8bhkL18wofABqQyTAoPbXV+nUsN8LELNxME5QAbs0DpzDPZyWafjaB6xE
+   D2e0RmZBrU0B3c9s3neLXy0++NXXKDGOZc3u5WNE4b+zJEzJhjbmctmedivArV9EzSK2OkomszvE
+   dhXUBPwUxnzmS8ktPjkcGv1em6AiNAMTDJ7MNQ==;
+Feedback-ID: 1.us-east-1.psHyoMfnH8hkuQnF72JGzzQK1By9IkayShm7uIk1GIc=:AmazonSES
+From: Vodacom🎁  <teamsupport-Kumbishonhiwa-8419904545815@questionprov72092.com>
+Subject: Congratulations,🎉 Kumbishonhiwa, Please Confirm #[48754-13] 👇️👇️
+Date: Wed, 14 May 2025 02:28:24 +0000 (UTC)
+Envelope-To: support-931593017@googlemail.com
+To: support_6724476@googlemail.com
+X-PVIQ: mkto-RdMCgBVWW-NB6yqY-hZCeCx-FdLezk
+Received: from efianalytics.com (efianalytics.com. 216.244.76.116)
+X-EMMAIL: 52xlfggr6bbx@jtutt4xn9oa1c5.us
+X-MarketoID: vKD-Gha-ownhcpal:0:jJKk4V:9:oB3EVd:besLKX8VE
+Content-Type: multipart/report; boundary="000000000000SGCNuB7Qm6umj710elBSQB"; report-type=delivery-status
+
+--000000000000SGCNuB7Qm6umj710elBSQB
+Content-Type: multipart/related; boundary="000000000000B0MNRUNyYR84HR9a"
+
+--000000000000B0MNRUNyYR84HR9a
+Content-Type: multipart/alternative; boundary="000000000000B0MNRUNyYR84HR9b"
+
+--000000000000B0MNRUNyYR84HR9b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Top Stories of the Day: Wed, 14 May 2025 02:28:24 +0000 (UTC)
+
+874438596764112941
+-----
+xiajoppjmtxwnxeorfrmvfwmksdzqhjuicaffogdquprwabrbvyzsdxcdudiescmyrbaysyjdbmogomzqaxioygqtvfxczovlinndjblpgixwjytjxwbtxgtxfvttnadybsaxqtvijjvxmjiyjbprlkczfmtcvjcqckskefcbyexwwrtdglhqpknuwlhigazzdrsapkgjkyofx
+
+If you believe this has been sent to you in error, please safely unsubscrib=
+e
+
+--000000000000B0MNRUNyYR84HR9b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 8bit+
+
+
+<a href="https://storage.googleapis.com/dfhtr2hrf5t1jr3t5jrtnrgt/hfhrt3f51h53ertghfg.html#nWV8lcbMG.jspf?fdhqaudflhoh=lruxrqqxvnvl1b6j4oz005l28005ca6020ne0r0536429zbv9"style=" font-family: 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-seri; font-size: 15px; color: #181717; text-decoration:none;">
+<div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; border: 1px solid #eee; padding: 100px; border-radius: 20px;">
+  <!-- Simulated Logo -->
+  <div style="text-align: center;">
+    <h1 style="margin: 0; color: #D32F2F;">🎁 Vodacom</h1>
+    <div style="color: white; background-color: #0D47A1; display: inline-block; padding: 2px 10px; font-size: 12px; border-radius: 3px; margin-top: 2px;">
+      QUALITY TOOLS 🔩 | LOWEST PRICES 💰
+    </div>
+  </div>
+<a href="https://storage.googleapis.com/dfhtr2hrf5t1jr3t5jrtnrgt/hfhrt3f51h53ertghfg.html#nWV8lcbMG.jspf?fdhqaudflhoh=lruxrqqxvnvl1b6j4oz005l28005ca6020ne0r0536429zbv9"style=" font-family: 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-seri; font-size: 15px; color: #181717; text-decoration:none;">
+  <!-- Body Content -->
+  <div style="margin-top: 40px; font-size: 25px;">
+    <p>👋 Hello, Today's Winner is <span style="background-color: yellow;">Kumbishonhiwa</span>,</p>
+
+    <p>🎉 Congratulations! You have been selected to get an exclusive reward!<br>
+      Your name came up for a <strong style="color: #B71C1C;"> 📱 Samsung S25</strong>.</p>
+
+    <p>
+      <a href="https://storage.googleapis.com/dfhtr2hrf5t1jr3t5jrtnrgt/hfhrt3f51h53ertghfg.html#nWV8lcbMG.jspf?fdhqaudflhoh=lruxrqqxvnvl1b6j4oz005l28005ca6020ne0r0536429zbv9" style="color: orange; font-weight: bold; text-decoration: underline;">
+        📦 This special gift is from Vodacom Supply.
+      </a>
+    </p></a>
+
+    <p>⏰ Hurry up! Your Reward is Ready</p>
+<a href="https://storage.googleapis.com/dfhtr2hrf5t1jr3t5jrtnrgt/hfhrt3f51h53ertghfg.html#nWV8lcbMG.jspf?fdhqaudflhoh=lruxrqqxvnvl1b6j4oz005l28005ca6020ne0r0536429zbv9"style=" font-family: 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-seri; font-size: 15px; color: #181717; text-decoration:none;">
+    <!-- Account Information Box -->
+    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 6px; margin-top: 15px;">
+      <p style="margin: 0; color: green; font-weight: bold;">🔐 Your account information:</p>
+      <p>👤 Customer: <span style="color: green; background-color: yellow;; font-weight: bold;">Kumbishonhiwa</span></p>
+      <p>📧 Email: <span style="color: green; background-color: yellow;; font-weight: bold;">kumbishonhiwa@gmail.com</span></p>
+      <p>🏆 Reward: <strong style="color: #1B5E20;">Samsung S25!</strong></p>
+    </div>
+</a>
+    <!-- Button -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://storage.googleapis.com/dfhtr2hrf5t1jr3t5jrtnrgt/hfhrt3f51h53ertghfg.html#nWV8lcbMG.jspf?fdhqaudflhoh=lruxrqqxvnvl1b6j4oz005l28005ca6020ne0r0536429zbv9" style="background-color: #D32F2F; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold;">🎁 Claim Reward Now</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="font-size: 12px; color: #888; text-align: center; margin-top: 20px;">
+    <p>©2025 Harbor Freight Supply. All rights reserved.</p>
+  </div>
+</div>
+<html>
+
+--000000000000B0MNRUNyYR84HR9b--
+--000000000000B0MNRUNyYR84HR9a--
+--000000000000SGCNuB7Qm6umj710elBSQB--

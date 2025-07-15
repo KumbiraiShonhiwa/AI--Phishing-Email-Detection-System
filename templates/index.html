@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Email Detection</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #4361ee;
+        --primary-dark: #3a56d4;
+        --secondary: #f72585;
+        --danger: #ef233c;
+        --success: #06d6a0;
+        --dark: #2b2d42;
+        --light-bg: #f8f9fa;
+        --border-radius: 12px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 800px;
+        margin: 40px auto;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background: var(--primary);
+        padding: 30px 40px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        top: -30%;
+        right: -10%;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+      }
+
+      .header h1 i {
+        margin-right: 15px;
+        font-size: 32px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .header p {
+        opacity: 0.85;
+        font-size: 16px;
+        max-width: 80%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content {
+        background: white;
+        padding: 40px;
+      }
+
+      .form-card {
+        background: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+      }
+
+      .tab-navigation {
+        display: flex;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 25px;
+      }
+
+      .tab-button {
+        flex: 1;
+        padding: 15px 20px;
+        text-align: center;
+        background: transparent;
+        border: none;
+        font-weight: 600;
+        color: #999;
+        font-size: 16px;
+        position: relative;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .tab-button.active {
+        color: var(--primary);
+      }
+
+      .tab-button.active::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 3px 3px 0 0;
+      }
+
+      .tab-button i {
+        margin-right: 8px;
+        font-size: 18px;
+      }
+
+      .tab-content {
+        display: none;
+        margin-bottom: 30px;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--dark);
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e1e5eb;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: var(--transition);
+        font-family: inherit;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .file-upload {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 120px;
+        border: 2px dashed #e1e5eb;
+        border-radius: 8px;
+        text-align: center;
+        transition: var(--transition);
+        cursor: pointer;
+        background-color: #fafbfc;
+      }
+
+      .file-upload:hover {
+        border-color: var(--primary);
+        background-color: rgba(67, 97, 238, 0.03);
+      }
+
+      .file-upload input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .file-upload-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #666;
+        pointer-events: none;
+      }
+
+      .file-upload i {
+        font-size: 32px;
+        margin-bottom: 10px;
+        color: #999;
+      }
+
+      .file-upload-text {
+        font-size: 16px;
+      }
+
+      .file-name {
+        margin-top: 15px;
+        padding: 6px 12px;
+        background-color: rgba(67, 97, 238, 0.1);
+        border-radius: 4px;
+        font-size: 14px;
+        color: var(--primary);
+        font-weight: 500;
+        display: none;
+        max-width: 90%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .file-active .file-upload-content {
+        opacity: 0.5;
+      }
+
+      .file-active .file-name {
+        display: inline-block;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 25px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(67, 97, 238, 0.15);
+      }
+
+      .btn-lg {
+        padding: 18px 30px;
+        font-size: 18px;
+        width: 100%;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(67, 97, 238, 0.2);
+      }
+
+      .btn i {
+        margin-right: 10px;
+      }
+
+      .result-card {
+        margin-top: 30px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.5s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .result-header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+
+      .result-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+      }
+
+      .result-icon i {
+        font-size: 28px;
+      }
+
+      .result-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .result-subtitle {
+        font-size: 16px;
+        opacity: 0.85;
+        margin: 5px 0 0;
+      }
+
+      .result-body {
+        padding: 25px;
+        background: white;
+      }
+
+      .result-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .result-detail:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .result-detail-label {
+        flex: 1;
+        font-weight: 500;
+        color: #666;
+      }
+
+      .result-detail-value {
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--dark);
+      }
+
+      .progress-bar {
+        height: 8px;
+        width: 150px;
+        background: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-right: 10px;
+      }
+
+      .progress-fill {
+        height: 100%;
+        border-radius: 4px;
+      }
+
+      .percentage {
+        font-weight: 600;
+        min-width: 45px;
+        text-align: right;
+      }
+
+      .danger .result-header {
+        background: var(--danger);
+      }
+
+      .success .result-header {
+        background: var(--success);
+      }
+
+      .danger .progress-fill {
+        background: var(--danger);
+      }
+
+      .success .progress-fill {
+        background: var(--success);
+      }
+
+      .tips {
+        margin-top: 20px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary);
+      }
+
+      .tips h3 {
+        font-size: 18px;
+        color: var(--dark);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .tips h3 i {
+        margin-right: 10px;
+        color: var(--primary);
+      }
+
+      .tips p {
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .tips ul {
+        padding-left: 20px;
+      }
+
+      .tips li {
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        padding: 30px 0;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(67, 97, 238, 0.1);
+        border-top: 5px solid var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 15px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .footer {
+        text-align: center;
+        padding: 20px;
+        color: #666;
+        font-size: 14px;
+        background: #f8f9fa;
+        border-top: 1px solid #eee;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
+          margin: 20px auto;
+        }
+
+        .header {
+          padding: 25px;
+        }
+
+        .content {
+          padding: 25px;
+        }
+
+        .header h1 {
+          font-size: 24px;
+        }
+
+        .tab-button {
+          padding: 12px 15px;
+          font-size: 14px;
+        }
+
+        .result-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        .result-title {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1><i class="fas fa-shield-alt"></i> Phishing Email Detection</h1>
+        <p>
+          Analyze emails to detect potential phishing attempts using our
+          advanced ML model
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="tab-navigation">
+          <button class="tab-button active" onclick="switchTab('textTab')">
+            <i class="fas fa-font"></i> Enter Text
+          </button>
+          <button class="tab-button" onclick="switchTab('fileTab')">
+            <i class="fas fa-file-alt"></i> Upload File
+          </button>
+        </div>
+
+        <form
+          method="POST"
+          enctype="multipart/form-data"
+          action="/predict"
+          id="phishingForm"
+        >
+          <div id="textTab" class="tab-content active">
+            <div class="form-group">
+              <label for="emailText">Email Content</label>
+              <textarea
+                class="form-control"
+                id="emailText"
+                name="email_text"
+                placeholder="Paste the full email text here including headers, links, and content..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div id="fileTab" class="tab-content">
+            <div class="form-group">
+              <label for="emailFile">Upload Email Text File</label>
+              <div class="file-upload" id="fileUploadArea">
+                <input
+                  type="file"
+                  id="emailFile"
+                  name="email_file"
+                  accept=".txt,.eml,.msg"
+                  onchange="handleFileSelect(this)"
+                />
+                <div class="file-upload-content">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div class="file-upload-text">
+                    Drag & drop a file or click to browse
+                  </div>
+                </div>
+              </div>
+              <div class="file-name" id="fileName"></div>
+              <small class="form-text text-muted"
+                >Accepted file types: .txt, .eml, .msg</small
+              >
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-lg" id="analyzeBtn">
+            <i class="fas fa-search"></i> Analyze Email
+          </button>
+        </form>
+
+        <div class="loading" id="loadingIndicator">
+          <div class="loading-spinner"></div>
+          <p>Analyzing email content...</p>
+        </div>
+
+        {% if prediction %}
+        <div
+          class="result-card {{ 'danger' if prediction == 'phishing' else 'success' }}"
+        >
+          <div class="result-header">
+            <div class="result-icon">
+              <i
+                class="{{ 'fas fa-exclamation-triangle' if prediction == 'phishing' else 'fas fa-check-circle' }}"
+              ></i>
+            </div>
+            <div>
+              <h2 class="result-title">
+                {{ 'Potential Phishing Detected!' if prediction == 'phishing'
+                else 'Email Appears Safe' }}
+              </h2>
+              <p class="result-subtitle">
+                {{ 'This email shows signs of being a phishing attempt' if
+                prediction == 'phishing' else 'No suspicious elements were
+                detected' }}
+              </p>
+            </div>
+          </div>
+
+          <div class="result-body">
+            <div class="result-detail">
+              <div class="result-detail-label">Classification</div>
+              <div class="result-detail-value">{{ prediction|capitalize }}</div>
+            </div>
+
+            <div class="result-detail">
+              <div class="result-detail-label">Confidence Level</div>
+              <div class="result-detail-value">
+                <div style="display: flex; align-items: center">
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill"
+                      style="width: {{ confidence }}%"
+                    ></div>
+                  </div>
+                  <span class="percentage">{{ confidence }}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% if prediction == 'phishing' %}
+          <div class="tips">
+            <h3><i class="fas fa-info-circle"></i> Security Recommendations</h3>
+            <p>
+              This email shows characteristics commonly found in phishing
+              attempts. Consider these tips:
+            </p>
+            <ul>
+              <li>
+                Do not click on any links or download attachments from this
+                email
+              </li>
+              <li>
+                Check the sender's email address carefully for misspellings or
+                unusual domains
+              </li>
+              <li>
+                Contact the purported sender through official channels to verify
+                authenticity
+              </li>
+              <li>Report this email to your IT department or security team</li>
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="footer">
+        <p>
+          Phishing Email Detection Tool &copy; 2025 | Powered by Advanced ML
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Add drag and drop functionality
+      const dropArea = document.getElementById('fileUploadArea');
+
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+          dropArea.addEventListener(eventName, preventDefaults, false);
+      });
+
+      function preventDefaults(e) {
+          e.preventDefault();
+          e.stopPropagation();
+      }
+
+      ['dragenter', 'dragover'].forEach(eventName => {
+          dropArea.addEventListener(eventName, highlight, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+          dropArea.addEventListener(eventName, unhighlight, false);
+      });
+
+      function highlight() {
+          dropArea.style.borderColor = var(--primary);
+          dropArea.style.backgroundColor = 'rgba(67, 97, 238, 0.05)';
+          dropArea.style.transform = 'scale(1.01)';
+      }
+
+      function unhighlight() {
+          dropArea.style.borderColor = '';
+          dropArea.style.backgroundColor = '';
+          dropArea.style.transform = '';
+      }
+
+      dropArea.addEventListener('drop', handleDrop, false);
+
+      function handleDrop(e) {
+          const dt = e.dataTransfer;
+          const files = dt.files;
+
+          if (files.length > 0) {
+              document.getElementById('emailFile').files = files;
+              handleFileSelect(document.getElementById('emailFile'));
+          }
+      }
+
+      function handleFileSelect(input) {
+          const fileName = input.files[0] ? input.files[0].name : '';
+          const fileNameElement = document.getElementById('fileName');
+          const fileUploadArea = document.getElementById('fileUploadArea');
+
+          if (fileName) {
+              fileNameElement.textContent = fileName;
+              fileNameElement.style.display = 'block';
+              fileUploadArea.classList.add('file-active');
+
+              // Validate file type
+              const fileExt = fileName.split('.').pop().toLowerCase();
+              const validTypes = ['txt', 'eml', 'msg'];
+
+              if (!validTypes.includes(fileExt)) {
+                  alert('Please select a valid file type (.txt, .eml, or .msg)');
+                  clearFileInput();
+                  return false;
+              }
+
+              // Validate file size (max 5MB)
+              const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+              if (input.files[0].size > maxSize) {
+                  alert('File size exceeds 5MB limit. Please select a smaller file.');
+                  clearFileInput();
+                  return false;
+              }
+          } else {
+              clearFileInput();
+          }
+      }
+
+      function clearFileInput() {
+          const fileInput = document.getElementById('emailFile');
+          const fileNameElement = document.getElementById('fileName');
+          const fileUploadArea = document.getElementById('fileUploadArea');
+
+          fileInput.value = '';
+          fileNameElement.textContent = '';
+          fileNameElement.style.display = 'none';
+          fileUploadArea.classList.remove('file-active');
+      }
+
+      function switchTab(tabId) {
+          // Hide all tabs
+          document.querySelectorAll('.tab-content').forEach(tab => {
+              tab.classList.remove('active');
+          });
+
+          // Deactivate all buttons
+          document.querySelectorAll('.tab-button').forEach(button => {
+              button.classList.remove('active');
+          });
+
+          // Show selected tab
+          document.getElementById(tabId).classList.add('active');
+
+          // Activate clicked button
+          event.currentTarget.classList.add('active');
+
+          // Clear the other field when switching tabs
+          if (tabId === 'textTab') {
+              clearFileInput();
+          } else {
+              document.getElementById('emailText').value = '';
+          }
+      }
+
+      document.getElementById('phishingForm').addEventListener('submit', function(event) {
+          const textContent = document.getElementById('emailText').value;
+          const fileContent = document.getElementById('emailFile').value;
+
+          // Check if either text or file is provided
+          if ((textContent.trim() === '' && fileContent === '') ||
+              (document.getElementById('textTab').classList.contains('active') && textContent.trim() === '') ||
+              (document.getElementById('fileTab').classList.contains('active') && fileContent === '')) {
+              alert('Please enter email text or upload a file before analyzing.');
+              event.preventDefault();
+              return false;
+          }
+
+          // Show loading indicator
+          document.getElementById('loadingIndicator').style.display = 'block';
+          document.getElementById('analyzeBtn').style.display = 'none';
+
+          return true;
+      });
+    </script>
+  </body>
+</html>

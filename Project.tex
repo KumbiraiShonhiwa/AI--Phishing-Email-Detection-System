@@ -1,0 +1,561 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{titlesec}
+\geometry{margin=1in}
+\usepackage{booktabs}
+
+
+\title{\textbf{AI-Powered Phishing Email Detection System} \\ COS720 - Computer Information and Security I}
+\author{Kumbirai Shonhiwa \\ University of Pretoria}
+\date{May 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Phishing detection utilising Artificial Intelligence (AI) involves the use of Machine Learning (ML) and Deep Learning (DL) algorithms to automatically identify and categorise fraudulent emails. These AI techniques analyse email content to detect threats, playing a vital role in mitigating email-related cyberattacks by identifying harmful messages that exploit human trust.\cite{4}
+The following is a summary of how AI is applied to phishing detection and its advantages over conventional approaches:
+
+\begin{itemize}
+    \item{Machine learning and deep learning are used to automatically detect phishing emails, thereby improving email security.} \cite{4}
+    \item Machine learning methods classify emails using features like sender details, content structure, and metadata. \cite{4}
+    \item Deep learning frameworks, such as CNNs, RNNs, LSTMs, and particularly transformer models like BERT and RoBERTa, can automatically identify intricate features from unprocessed email data. These deep learning models analyse the contextual and semantic details within emails, leading to enhanced precision and reliability. \cite{4}
+    \item AI-based solutions can effectively detect advanced phishing techniques, including those created with AI tools. \cite{4}
+    \item Traditional detection methods that rely primarily on static features, such as URLs or IP addresses, often struggle to identify AI-generated phishing emails that closely imitate legitimate communication.
+    \item{Deep learning frameworks consistently outperform traditional machine learning methods in terms of detection accuracy and adaptability. \cite{4}
+    \item Transformer models like BERT and RoBERTa have achieved accuracies of 98.99\% and 99.08\% on a balanced dataset. \cite{4}
+    \item These {DL frameworks outperformed conventional ML methods by an average margin of 4.7\%}. \cite{4}
+    \item{AI-driven solutions are considered essential for strengthening modern email security systems.}  \cite{4}
+\end{itemize}
+
+
+\section{Dataset Preparation}
+
+This study utilises multiple phishing email datasets from Kaggle \cite{1}. The datasets were preprocessed to extract relevant features for phishing detection, including:
+
+\begin{itemize}
+    \item Subject line analysis (keywords, patterns, length)
+    \item Sender information (domain reputation, address structure)
+    \item Email body content (suspicious links, HTML elements, text-to-link ratio)
+    \item Structural metadata (headers, attachments, encoding)
+\end{itemize}
+
+\subsection{Dataset Exploration}
+
+We analysed seven distinct email datasets with varying characteristics, as shown in Table~\ref{tab:dataset_composition}.
+
+
+\begin{table}[htbp]
+\centering
+\caption{Composition of Email Datasets}
+\label{tab:dataset_composition}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Dataset} & \textbf{Phishing Emails} & \textbf{Legitimate Emails} & \textbf{Total} \\
+\midrule
+SpamAssassin     & 1,718  & 4,091  & 5,809   \\
+Nigerian Fraud   & 3,332  & 0      & 3,332   \\
+Phishing Email   & 42,891 & 39,595 & 82,486  \\
+CEAS\_08         & 21,842 & 17,312 & 39,154  \\
+Enron            & 13,976 & 15,791 & 29,767  \\
+Ling             & 458    & 2,401  & 2,859   \\
+Nazario          & 1,565  & 0      & 1,565   \\
+\midrule
+\textbf{Total}   & \textbf{85,782} & \textbf{79,190} & \textbf{164,972} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Data Preprocessing}
+
+Several preprocessing steps were applied to standardise the input data:
+
+\begin{enumerate}
+    \item{Text normalisation :} Converting to lowercase, removing special characters, and stemming
+    \item{Feature extraction:} Identifying URLs, analysing email structure, and extracting header information
+    \item{Balancing:} Addressing class imbalance through stratified sampling techniques
+    \item{Dimensionality reduction:} Selecting the most relevant features based on statistical significance
+\end{enumerate}
+
+\subsection{Feature Engineering}
+
+For effective phishing detection, we combined multiple text-based features from each email into a unified representation. This approach allows the model to identify patterns across different email components simultaneously.
+
+The feature engineering process concatenates four key components of each email:
+\begin{itemize}
+    \item{Sender information:} Email addresses and display names that may contain phishing indicators
+    \item{Subject line:} Often contains social engineering cues or urgent language
+    \item{Email body:} The main content where phishing attempts are elaborated
+    \item{URLs:} Web links that might redirect to malicious websites
+\end{itemize}
+
+By combining these features into a single text representation (\texttt{X\_combined}), we enable the model to capture interactions between different email components. For example, identifying when suspicious URLs complement social engineering narratives in the body text.
+The prepared datasets were then split into training (70\%), validation (15\%), and testing (15\%) sets while maintaining the distribution of phishing and legitimate emails.
+
+\section{Model Development}
+This section outlines our process for developing a machine learning model to classify phishing emails. We start by selecting the appropriate algorithms, then compare each alternative algorithm with our chosen one, and finally, we describe our evaluation methodology.
+
+\section*{Process of Selecting a Model for Phishing Email Classification}
+
+Selecting the right machine learning model is essential for developing an effective phishing email classification system. We evaluated several supervised learning classifiers, including Support Vector Machines (SVM), Naive Bayes, Decision Trees, and Neural Networks.
+
+\subsection*{Comparing SVMs with Other Classifiers}
+
+Support Vector Machines excel in handling high-dimensional and complex data, such as email content. Unlike Naive Bayes, which assumes feature independence and struggles with non-linearity, SVMs can model these relationships using kernel functions.\cite{9,11} However, they require careful hyperparameter tuning and can be more computationally intensive.
+Compared to Decision Trees, SVMs better manage high-dimensional data and are less likely to overfit. Decision Trees are simpler but can become unstable with noisy datasets.\cite{9,10,11}
+SVMs are also more resistant to overfitting than Neural Networks, which offer greater flexibility but require larger datasets and more computational resources.\cite{8,9,13}
+
+\subsection*{Evaluating and Selecting an Algorithm}
+
+We used phishing and legitimate emails from the CEAS 2008 corpus for our dataset, applying TF-IDF vectorisation to extract features like the sender's email address, subject line, body, and URLs. We evaluated model performance through stratified k-fold cross-validation, utilising metrics such as accuracy, precision, recall, and F1-score.
+The Support Vector Machine (SVM) provided the best precision-recall balance, minimising false negatives in phishing detection. We optimised performance by fine-tuning hyperparameters through grid and randomised searches.
+
+\subsection{Model Training Approach}
+Our model is trained using supervised learning with labelled data from multiple phishing email datasets. The training process involves:
+
+\begin{enumerate}
+    \item{Feature Extraction}: Converting raw email content into numerical features using TF-IDF vectorisation, focusing on sender information, subject lines, email body, and embedded URLs.
+    
+    \item{Data Preprocessing}: Handling missing values, removing stop words, and normalising text data to improve feature quality.
+    
+    \item{Class Imbalance Handling}: Applying Random Undersampling to the majority class to create a more balanced training dataset.
+     
+    \item{Hyperparameter Tuning}: Using techniques such as grid search or random search to optimise model hyperparameters for improved performance.
+\end{enumerate}
+
+\subsection{Performance Evaluation}
+The performance of our models is evaluated using a comprehensive set of metrics to account for the classification task's nuances and the potential imbalance in the dataset:
+
+
+    \begin{table}[htbp]
+    \centering
+    \caption{Classification Report (Accuracy = 0.99)}
+    \label{tab:classification_report}
+    \begin{tabular}{@{}lcccc@{}}
+    \toprule
+    \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+    \midrule
+    0 (Legitimate) & 0.9910 & 0.9873 & 0.9891 & 3,462 \\
+    1 (Phishing)   & 0.9900 & 0.9929 & 0.9914 & 4,369 \\
+    \midrule
+    \textbf{Macro avg}    & 0.9905 & 0.9901 & 0.9903 & 7,831 \\
+    \textbf{Weighted avg} & 0.9904 & 0.9904 & 0.9904 & 7,831 \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+    \noindent
+Table~\ref{tab:classification_report} summarises the classification performance of the model in detecting legitimate versus phishing emails. The metrics shown are:
+
+\begin{itemize}
+    \item \textbf{Precision:} Precision for each class measures the proportion of correctly predicted samples among all samples predicted as that class. For example, a precision of 0.99 for the legitimate class means that 99.1\% of predicted legitimate emails were truly legitimate.
+    \item \textbf{Recall:} The proportion of actual samples of each class that were correctly identified by the model. A recall of 0.9929 for the phishing class means 99.29\% of phishing emails were correctly detected.
+    \item \textbf{F1-score:} The harmonic mean of precision and recall, providing a balanced measure of model performance.
+    \item \textbf{Support:} The total number of true samples for each class in the test set.
+\end{itemize}
+
+The model achieves an accuracy of 99\%, correctly classifying 99\% of emails. Both classes show high precision, recall, and F1-scores, indicating effective identification of phishing emails with few false positives and negatives. The macro average is the unweighted mean of metrics, while the weighted average considers class distribution.
+
+   \item{Confusion Matrix}: The model achieved high classification performance, as shown by the confusion matrix with 4338 true positives and 3418 true negatives, and very few false positives (44) and false negatives (31). The precision-recall curve remains close to (1.0, 1.0), indicating that the model maintains excellent precision and recall across thresholds. [Figure 1]
+
+    \item{Precision-Recall Curve}: The curve demonstrates that the model sustains a high precision level even as recall increases, highlighting its ability to detect most spam emails with minimal false alarms. The slight drop near full recall is expected due to the precision-recall trade-off. [Figure 2]
+    
+    
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Screenshot 2025-05-17 014504.png}
+        \caption{Confusion Matrix}
+    \end{figure}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Screenshot 2025-05-17 014519.png}
+        \caption{Precision-Recall Curve}
+    \end{figure}
+    
+\end{itemize}
+
+
+\subsection{Feature Interpretation}
+For the final selected model, we implement a feature interpretation mechanism to understand which email characteristics most strongly influence the classification decision:
+
+\begin{verbatim}
+# Interpretation: extract non-zero TF-IDF features
+feature_index = X_email.nonzero()[1]
+tfidf_scores = X_email.data
+word_importance = [(feature_names[i], coef[i] * tfidf_scores[j]) 
+                   for j, i in enumerate(feature_index)]
+
+word_importance_sorted = sorted(word_importance, key=lambda x: abs(x[1]), reverse=True)[:top_n]
+\end{verbatim}
+This interpretation capability enhances the practical utility of the model by providing insights into the decision-making process and highlighting potentially suspicious elements in emails flagged as phishing attempts.
+\section{Prototype Implementation}
+This section details the development of a web-based prototype interface for the phishing email detection system. The implementation provides an accessible platform for users to interact with the trained machine learning model through an intuitive user interface.
+
+\subsection{Functional Requirements}
+The phishing email classification system shall fulfil the following core functional requirements:
+\begin{itemize}
+    \item \textbf{Data Ingestion:} The system shall load and process multiple datasets, including CEAS\_08, Nigerian\_Fraud, Enron, Ling, and others, with support for CSV file formats.
+
+    \item \textbf{Preprocessing:} The system shall extract textual features (e.g., \texttt{sender}, \texttt{subject}, \texttt{body}, \texttt{urls}) and apply TF-IDF vectorisation to convert text data into numerical form suitable for machine learning.
+
+    \item \textbf{Model Training:} The system shall train a Support Vector Machine (SVM) classifier using a linear kernel. It shall support undersampling of the majority class to handle imbalanced datasets.
+
+    \item \textbf{Evaluation:} The system shall evaluate the model using accuracy, precision, recall, F1-score, confusion matrix, and a precision-recall curve. Results will be displayed both numerically and visually.
+
+    \item \textbf{Model Persistence:} The trained model shall be saved using \texttt{joblib} for later deployment or testing.
+
+    \item \textbf{Prediction and Interpretation:} The system shall allow batch classification of new email samples and provide interpretation of predictions by highlighting top contributing features based on TF-IDF and SVM coefficients.
+
+    \item \textbf{Web Integration:} A lightweight web interface using Flask shall be implemented to allow user interaction for real-time email classification and display of prediction results.\cite{14}
+\end{itemize}
+
+\subsection{System Architecture}
+The prototype implementation follows a standard client-server architecture, with the following components:
+\begin{itemize}
+\item{Back-end Server}: Implemented using Flask, a lightweight Python web framework that provides the necessary tools for routing HTTP requests, handling form submissions, and serving HTML templates. \cite {14}
+\item{Machine Learning Model}: The trained SVM model is integrated into the back-end server, along with the TF-IDF vectorizer used for feature extraction.\cite{13}
+
+\item{Web Interface}: A responsive HTML/CSS frontend that allows users to input email text or upload email files for classification.
+\end{itemize}
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{System Architecture Diagram.png}
+        \caption{Client-Sever Architecture Diagram }
+    \end{figure}
+     \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{evaluate_email sequence.png}
+        \caption{Sequence Diagram of Email Evaluation }
+    \end{figure}
+     \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{model_training_diagram.png}
+        \caption{Sequence Diagram of Model Training Process }
+    \end{figure}
+     \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Class Diagram.png}
+        \caption{Class Diagram of Model }
+    \end{figure}
+\subsection{Flask Application Development}
+The core of the prototype is a Flask application that handles user requests, processes email content, and returns classification results. The application is developed using Python, leveraging the Flask framework for web server functionality and various scientific libraries for machine learning tasks.\cite{13}
+\subsubsection{Application Initialization}
+The initialisation process includes:
+\begin{itemize}
+\item Loading the necessary Python libraries, including Flask for web server functionality, joblib for model loading, scikit-learn for text vectorisation, and pandas for data handling.
+\item Loading the pre-trained SVM model from a serialised file (\texttt{svm\_model.pkl}), which contains the trained model parameters from the training phase.
+
+\item Initialising and fitting the TF-IDF vectoriser with the same parameters used during model training to ensure consistent feature extraction.
+
+\item Creating a new Flask application instance, which will handle HTTP requests and serve the web interface.
+\end{itemize}
+\subsubsection{Email Evaluation Function}
+The core functionality for email classification is encapsulated in the evaluate emails function, which performs several key operations:
+\begin{itemize}
+\item Accepts email data in either dictionary or DataFrame format, with fields for email descriptors, text content, and true labels (though the latter is only used for logging in the prototype).
+\item Converts the input email text to TF-IDF feature vectors using the pre-trained vectorizer, ensuring the same feature extraction process used during model training.
+
+\item Applies the trained SVM model to predict whether each email is phishing (1) or legitimate (0).
+
+\item Logs detailed results for debugging and monitoring purposes.
+
+\item Returns a human-readable classification result ('Phishing' or 'Non-Phishing') for the user interface.
+\end{itemize}
+\subsubsection{Web Routes and Request Handling}
+The Flask application defines two main routes to handle user interactions:
+
+\begin{itemize}
+\item A root route (\texttt{/}) that serves the main page of the application, rendering the \texttt{index.html} template.
+\item A prediction route (\texttt{/predict}) that accepts POST requests containing email content for classification.
+
+\item Dual input methods, allowing users to either type/paste email text directly into a form field or upload a text file containing the email.
+
+\item Input validation to ensure that valid email content is provided before attempting classification.
+
+\item Integration with the evaluation function to classify the provided email content.
+
+\item Rendering of the results page, which includes the classification outcome.
+\end{itemize}
+\subsection{Web Interface Design}
+The web interface is designed to be user-friendly and intuitive, focusing on simplicity and clear presentation of results. The interface is implemented using HTML and CSS, with the following key components:
+\begin{itemize}
+\item{Input Form}: A form that allows users to input email content either by typing/pasting text or by uploading a text file.
+\item{Submission Button}: A clearly labelled button to submit the email for classification.
+
+\item{Results Display}: A section that shows the classification result (phishing or legitimate) along with a confidence score.
+
+\item{Error Messages}: Clear feedback when inputs are invalid or processing fails.
+\end{itemize}
+Figure \ref{fig:web_interface} shows a conceptual mock-up of the web interface design.
+\begin{figure}[h]
+\centering
+\fbox{
+\begin{minipage}{0.8\textwidth}
+\centering
+\textbf{Phishing Email Detection Tool}
+\vspace{0.5cm}
+        \fbox{\begin{minipage}{0.9\textwidth}
+           {Input Email Content:}\\
+            \rule{0.9\textwidth}{3cm}
+        \end{minipage}}
+        
+        \vspace{0.3cm}
+        
+       {OR}
+        
+        \vspace{0.3cm}
+        
+        \fbox{\begin{minipage}{0.9\textwidth}
+           {Upload Email File:}\\
+            [ Choose File ] No file chosen
+        \end{minipage}}
+        
+        \vspace{0.5cm}
+        
+        [ Submit for Analysis ]
+        
+        \vspace{0.5cm}
+        
+        \fbox{\begin{minipage}{0.9\textwidth}
+           {Results:}\\
+            Classification:{Non-Phishing}\\
+            Confidence Score: 87\%
+        \end{minipage}}
+    \end{minipage}
+}
+\caption{Conceptual design of the web interface for phishing email detection}
+\label{fig:web_interface}
+\end{figure}
+
+\subsection{Application Deployment}
+The application is run using the following code at the end of the Flask script:
+\begin{lstlisting}[language=Python, caption={Application Deployment}, label={lst:app_run}]
+if name == 'main':
+app.run(debug=True)
+\end{lstlisting}
+For development purposes, the application is run with debug mode enabled, which provides detailed error messages and automatic server reloading when code changes are detected.
+\subsection{System Features and Capabilities}
+The prototype implementation offers several key features and capabilities designed with a focus on usability, robustness, and security:
+
+\begin{itemize}
+    \item \textbf{Email Classification}: The core functionality involves classifying emails as either phishing or legitimate using a trained Support Vector Machine (SVM) model in conjunction with TF-IDF vectorisation. This enables accurate content-based analysis.
+
+    \item \textbf{Dual Input Methods}: Users can submit email content either through direct text input or by uploading a plain text file (.txt). This flexibility accommodates varied user scenarios while ensuring safe file handling.
+
+    \item \textbf{Result Visualisation}: Classification results are presented clearly, with intuitive visual indicators (e.g., colour-coded labels) to distinguish phishing from legitimate emails.
+
+    \item \textbf{Input Validation and Sanitisation}: All user input is thoroughly validated and sanitised to guard against malicious content. This includes checking for harmful patterns like embedded scripts, limiting the length of input, and ensuring that files match expected formats.
+
+    \item \textbf{Security Measures}: The system implements various security measures, including rate limiting to prevent abuse, secure session management (such as HTTP-only and secure cookies), restrictions on file types and sizes, and safeguards against path traversal in file uploads.
+
+    \item \textbf{Logging and Monitoring}: All system activities, including errors, input anomalies, and user interactions, are logged using a secure rotating log mechanism. This process facilitates debugging, security auditing, and system monitoring without revealing sensitive user data. 
+
+    \item \textbf{Error Handling}: The application smoothly manages invalid inputs, upload problems, and internal errors, offering users clear feedback while logging technical details for administrators.
+
+    \item \textbf{Extensibility}: Designed with a modular architecture, the prototype can be easily expanded to include additional features such as phishing source tracing, natural language explanations, or integration with email gateways.
+\end{itemize}
+
+
+
+
+\section{Testing and Evaluation}
+
+\subsection{Testing Scenarios}
+The phishing detection model was tested on a diverse set of 25 email samples comprising both phishing and non-phishing emails. These samples included:
+\begin{itemize}
+    \item Real-world phishing emails with various common phishing tactics (e.g., account alerts, fake invoices, password reset requests)
+    \item Legitimate emails such as event invitations, meeting reminders, and project updates
+    \item Edge cases including ambiguous or borderline emails with mixed or suspicious content
+\end{itemize}
+
+\subsection{Performance Metrics}
+The model's performance was evaluated using the following metrics:
+\begin{itemize}
+    \item \textbf{Accuracy}
+    \item \textbf{Precision}
+    \item \textbf{Recall}
+    \item \textbf{F1-score}
+\end{itemize}
+
+
+\subsection{Results}
+The classification performance of the phishing detection model on the test set of 25 samples is summarized in Table~\ref{tab:classification_report}.
+
+\begin{table}[htbp]
+\centering
+\caption{Classification Report on Test Set (25 samples)}
+\label{tab:classification_report}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+\midrule
+Non-phishing & 0.67 & 0.46 & 0.55 & 13 \\
+Phishing     & 0.56 & 0.75 & 0.64 & 12 \\
+\midrule
+\textbf{Accuracy}    & \multicolumn{4}{c}{0.60} \\
+\textbf{Macro avg}   & 0.61 & 0.61 & 0.59 & 25 \\
+\textbf{Weighted avg}& 0.62 & 0.60 & 0.59 & 25 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Interpretability and Feature Contributions}
+For each tested email, the model outputs the predicted label along with top contributing features and their impact scores. These feature contributions provide insight into the decision-making process of the classifier, indicating which words or tokens pushed the prediction towards phishing or non-phishing.
+
+Examples include:
+\begin{itemize}
+    \item \textit{Lottery scam} emails showed strong positive contributions from words like “000”, “claim”, and “details,” driving the phishing classification.
+    \item Legitimate emails such as \textit{Event invitation} and \textit{Meeting reminder} had dominant negative feature contributions, reflecting trusted terms that reduce phishing likelihood.
+    \item Some false negatives and false positives revealed ambiguous feature weights, highlighting challenges in edge cases (e.g., \textit{Fake invoice attached} predicted as non-phishing).
+\end{itemize}
+
+\subsection{Analysis}
+The evaluation results reveal:
+\begin{itemize}
+    \item An overall accuracy of 60\% on the small test set.
+    \item Higher recall for the phishing class (0.75) compared to non-phishing (0.46), indicating the model is better at catching phishing emails.
+    \item Precision is higher for non-phishing (0.67) than phishing (0.56), meaning more false positives occur in phishing classification.
+    \item The F1-scores reflect a trade-off between precision and recall, with phishing detection slightly outperforming non-phishing.
+    \item The feature contribution analysis aids interpretability and provides clues for improving model robustness.
+\end{itemize}
+
+\subsection{Failure Analysis}
+
+Despite demonstrating reasonable performance, the phishing detection system exhibits several failure modes that limit its overall effectiveness:
+
+\begin{itemize}
+    \item \textbf{False Positives on Legitimate Emails:} 
+    Several non-phishing emails were incorrectly classified as phishing. For example, emails such as \textit{Flight booking confirmation}, \textit{Monthly billing statement}, and \textit{Schedule change notice} were flagged as phishing despite being legitimate. This suggests the model sometimes over-relies on certain negative feature contributions (e.g., words like "claim" and "security") that may appear in legitimate contexts but are associated with phishing in training.
+
+    \item \textbf{False Negatives on Phishing Emails:} 
+    Some phishing emails were misclassified as non-phishing, notably \textit{Fake invoice attached} and \textit{Compromised password alert}. This indicates the model can fail to recognize more sophisticated or subtle phishing tactics, especially when key phishing indicators have weaker feature weights or overlap with legitimate language patterns.
+
+    \item \textbf{Ambiguity in Edge Cases:}
+    Emails with mixed content or borderline characteristics (e.g., \textit{Customer feedback request} and \textit{Newsletter subscription}) showed inconsistent classification, reflecting challenges in distinguishing nuanced differences between phishing and legitimate emails.
+
+    \item \textbf{Feature Weight Conflicts:} 
+    The top contributing features sometimes include terms with contradictory impacts (both positive and negative scores across samples). This inconsistency suggests that the model's feature weighting may not fully capture contextual usage, leading to erroneous predictions in some cases.
+
+\end{itemize}
+
+\paragraph{Implications:}  
+These failure points highlight the need for:
+\begin{itemize}
+    \item Enhanced feature engineering to better capture contextual nuances and reduce false alarms.
+    \item Incorporation of additional data sources or more advanced models (e.g., deep learning or context-aware embeddings) to improve detection of sophisticated phishing.
+    \item Ongoing evaluation with larger, more diverse datasets to identify and mitigate weaknesses.
+\end{itemize}
+Resolving these challenges is essential to enhance the model’s reliability and make it more effective for real-world phishing detection applications. Overall, the model demonstrates potential in identifying phishing attempts, with a strong emphasis on maximising recall to minimise missed threats. Nonetheless, the moderate precision and recall scores indicate that further improvements are needed, especially to lower false positive rates on legitimate emails.
+
+\section{Limitations and Considerations}
+
+\begin{enumerate}
+    \item \textbf{Feature Limitations}
+    \begin{itemize}
+        \item Does not analyse email headers beyond basic sender information.
+        \item Limited processing of HTML content and complex email structures.
+        \item No support for image or attachment analysis, limiting detection of embedded malicious content.
+        \item Only supports plain text input and simple file formats (e.g., .txt), restricting input diversity.
+    \end{itemize}
+
+    \item \textbf{Dataset Biases}
+    \begin{itemize}
+        \item Training data may not cover the latest phishing techniques or emerging threats.
+        \item Geographic, cultural, and language biases present in the training dataset may reduce model generalizability.
+        \item Potential imbalance in phishing vs. legitimate emails affecting classifier performance.
+    \end{itemize}
+
+    \item \textbf{Security Considerations}
+    \begin{itemize}
+        \item The system is vulnerable to adversarial attacks crafted to evade detection.
+        \item Regular model retraining and security patching are required to maintain detection efficacy.
+        \item Input validation and sanitisation are vital, but they may not completely eliminate risks associated with injection or cross-site scripting (XSS).
+        \item While rate limiting and session management offer fundamental protection, they should be enhanced with more robust mechanisms in production environments.
+    \end{itemize}
+
+    \item \textbf{Performance Trade-offs}
+    \begin{itemize}
+        \item Balancing precision and recall is challenging: Optimising for fewer false positives can increase missed phishing attempts.
+        \item Higher sensitivity may result in more false alarms, potentially overwhelming users.
+        \item Computational resources and latency considerations may limit real-time analysis capabilities at scale.
+    \end{itemize}
+
+    \item \textbf{Operational and Scalability Considerations}
+    \begin{itemize}
+        \item Current implementation uses in-memory rate limiting, which does not scale across multiple server instances.
+        \item Model and vectoriser loading processes are static and lack versioning or hot-reloading features.
+        \item Lack of HTTPS enforcement and advanced session security features may expose user data in transit.
+        \item Limited logging granularity reduces the ability to perform detailed audit trails or incident investigations.
+    \end{itemize}
+\end{enumerate}
+
+\section{References}
+\begin{thebibliography}{9}
+
+\bibitem{1} 
+N. Abdullah, ``Phishing Email Dataset,'' \textit{Kaggle}, 2024. [Online]. Available: \url{https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset}. [Accessed: May 12, 2025].
+
+\bibitem{2} 
+PlantUML, ``Open-source tool that uses simple textual descriptions to draw beautiful UML diagrams,'' \textit{PlantUML.com}, [Online]. Available: \url{https://plantuml.com/}. [Accessed: May 17, 2025].
+
+\bibitem{3} 
+Mermaid, ``Mermaid | Diagramming and charting tool,'' \textit{Mermaid.js.org}, [Online]. Available: \url{https://mermaid.js.org/}. [Accessed: May 12, 2025].
+
+\bibitem{4} 
+A. Alhuzali, A. Alloqmani, M. Aljabri, and F. Alharbi, ``In-depth analysis of phishing email detection: Evaluating the performance of machine learning and deep learning models across multiple datasets,'' \textit{Applied Sciences}, vol. 15, no. 6, p. 3396, Mar. 2025. doi: \url{https://doi.org/10.3390/app15063396}.
+
+\bibitem{5} 
+Excalidraw, ``Excalidraw,'' \textit{Excalidraw}, [Online]. Available: \url{https://excalidraw.com/}. [Accessed: May 12, 2025].
+
+\bibitem{6} 
+Scikit-Learn, ``sklearn.ensemble.RandomForestClassifier — scikit-learn 0.20.3 documentation,'' \textit{Scikit-learn.org}, [Online]. Available: \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html}. [Accessed: May 12, 2025].
+
+\bibitem{7} 
+Scikit-Learn, ``sklearn.linear model.LogisticRegression — scikit-learn 0.21.2 documentation,'' \textit{Scikit-learn.org}, 2014. [Online]. Available: \url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html}. [Accessed: May 12, 2025].
+
+\bibitem{8} 
+IBM, ``What is a Neural Network?,'' \textit{IBM}, Oct. 06, 2021. [Online]. Available: \url{https://www.ibm.com/think/topics/neural-networks}. [Accessed: May 10, 2025].
+
+\bibitem{9} 
+IBM, ``Support Vector Machine,'' \textit{IBM}, Dec. 12, 2023. [Online]. Available: \url{https://www.ibm.com/think/topics/support-vector-machine}. [Accessed: May 10, 2025].
+
+\bibitem{10}
+IBM, ``What Is a Decision Tree?,'' \textit{Ibm.com}, Nov. 2, 2021. [Online]. Available: \url{https://www.ibm.com/think/topics/decision-trees}
+
+\bibitem{11}
+J.~Daniel and J.~Martin, \emph{Speech and Language Processing}, Dec. 2021. [Online]. Available: \url{https://web.stanford.edu/~jurafsky/slp3/4.pdf}
+
+\bibitem{12}
+C. Staff, ``The Difference Between SVM and Decision Trees,'' \textit{Coursera}, 2025. [Online]. Available: \url{https://www.coursera.org/articles/difference-between-svm-and-decision-tree}. [Accessed: April 8, 2025].
+
+\bibitem{13}
+``Support Vector Machines vs Neural Networks,'' \textit{GeeksforGeeks}, Feb. 13, 2024. [Online]. Available: \url{https://www.geeksforgeeks.org/support-vector-machines-vs-neural-networks/}.[Accessed: April 8 2025].
+
+\bibitem{14}
+Flask, ``Welcome to Flask — Flask Documentation (3.0.x),'' \textit{Palletsprojects.com}, 2010. [Online]. Available: \url{https://flask.palletsprojects.com/en/stable/}
+
+
+\bibitem{15}
+Google, “Classification: Accuracy, recall, precision, and related metrics,” \textit{Google for Developers}, 2024. [Online]. Available: \url{https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall}. [Accessed: May 2025].
+
+\bibitem{16}
+Acunetix. 
+\textit{What is Cross-site Scripting and How Can You Fix it?} 
+Acunetix Web Application Security. 
+Available at: \url{https://www.acunetix.com/websitesecurity/cross-site-scripting/} 
+[Accessed May 17, 2025].
+
+\end{thebibliography}
+
+
+\end{document}

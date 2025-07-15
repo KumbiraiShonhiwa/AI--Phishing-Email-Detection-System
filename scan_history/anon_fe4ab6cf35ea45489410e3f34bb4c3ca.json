@@ -1,0 +1,11 @@
+{
+  "scans": [
+    {
+      "id": "b897ae13-ce30-4da0-9a69-8cccaed64ad3",
+      "timestamp": "2025-05-17T00:50:35.381076",
+      "email_excerpt": "hu",
+      "prediction": "Phishing",
+      "confidence": 61
+    }
+  ]
+}

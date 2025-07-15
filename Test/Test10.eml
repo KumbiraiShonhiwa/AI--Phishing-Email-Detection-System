@@ -1,0 +1,1095 @@
+Delivered-To: kumbi.shonhiwa@tuks.co.za
+Received: by 2002:a17:906:6a09:b0:ac4:cf1:2b8e with SMTP id qw9csp3554798ejc;
+        Tue, 6 May 2025 22:30:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFgo44Msj7ocvo0Jexp8yIX/HF3uGNiZvIA4O5nGi5a/TfenW6ObNEYG7poquFLZXTWsJlm
+X-Received: by 2002:a05:6000:2c7:b0:3a0:8712:f89b with SMTP id ffacd0b85a97d-3a0b49ab859mr1318277f8f.20.1746595840612;
+        Tue, 06 May 2025 22:30:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746595840; cv=none;
+        d=google.com; s=arc-20240605;
+        b=PlRB5opB6SfqYOjet62bjPokCHEUFpyXgqyWgZUiUtzYvbJCvjW6ZZgH6VQ1HqIqnc
+         SLsHgTDNWNVUvt7IVhpbvLnYdkgNfJ8o8w75ZDmPQ7mrGppJGkRIF6dh2i10q4sN0aX2
+         9xA7iWRtvcCSZ4v2mnKK4xQSzkNyn5fipmW/bc1X8LG1Wu8u7j6zKSRawtXEVoq9yGU2
+         hk5Gkmfm+BjMvR0trrXoHwzmFODbyo3ogsMvuWFyLpfrI7HVbhMrWsTOl15dEmE+LWpg
+         Ky9IO5UcIe/YHjXu94NAf67Stt9zjFnaSuHGq+3QW4vJ55jD55IKTa0b4kp0qEpoTnuj
+         tmDA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:date:mime-version:subject:to:from:feedback-id
+         :list-unsubscribe:reply-to:list-unsubscribe-post:dkim-signature
+         :dkim-signature;
+        bh=QYLGZngzeE4cUQVIM0/1zSdxNFzOoY7ff3A0bBtwfCI=;
+        fh=LyNmdUGi5Q21L7VK7jpzSU3agSOebGIQ6zvzPSVzWsU=;
+        b=BqruPaErNww0rv264GR3ackWZjDhl5sR70faj7c5Bsc31MrlY613dcFkZpMcvE+j7k
+         X22EugyOx0PMsP+E+FnG6qx5ixyy1kjqyc0Saa+oU2jglu3eRcrlLbUGVIZsrHu7btPh
+         JV97HisvNrjdbA01oP9JgmxEVmLbZGMvOccZzTKRadewe7P81NV88x2cQ/tuUVZ/dZd/
+         2Hp5TImGHhaHS41F/M2KF2igPApVI/8qmwu5dKRi40yD0p+4ylrpAduenrK5OKpWjwJD
+         kBSvxIiskMK8I/Ugw2p4nWWZRjb+1vA0+YESm/T1r7P5o/iXzHliXY1lv/23fnlqpUsY
+         zS4g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@up.ac.za header.s=everlytickey1 header.b=laEHUM5n;
+       dkim=pass header.i=@eversrv.com header.s=everlytickey1 header.b=FVzaH7cj;
+       spf=pass (google.com: domain of b_187777082_8cdcef2aac4ceb0e_839227_85k46vbvlzc7rjbf_9@eversrv.up.ac.za designates 102.219.93.84 as permitted sender) smtp.mailfrom=b_187777082_8cdcef2aac4ceb0e_839227_85K46vBvLZC7RJBF_9@eversrv.up.ac.za;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=up.ac.za
+Return-Path: <b_187777082_8cdcef2aac4ceb0e_839227_85K46vBvLZC7RJBF_9@eversrv.up.ac.za>
+Received: from mail11m84.outbound.eversrv.com (mail11m84.outbound.eversrv.com. [102.219.93.84])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-3a0ad5c4077si2142663f8f.151.2025.05.06.22.30.39
+        for <kumbi.shonhiwa@tuks.co.za>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 06 May 2025 22:30:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of b_187777082_8cdcef2aac4ceb0e_839227_85k46vbvlzc7rjbf_9@eversrv.up.ac.za designates 102.219.93.84 as permitted sender) client-ip=102.219.93.84;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@up.ac.za header.s=everlytickey1 header.b=laEHUM5n;
+       dkim=pass header.i=@eversrv.com header.s=everlytickey1 header.b=FVzaH7cj;
+       spf=pass (google.com: domain of b_187777082_8cdcef2aac4ceb0e_839227_85k46vbvlzc7rjbf_9@eversrv.up.ac.za designates 102.219.93.84 as permitted sender) smtp.mailfrom=b_187777082_8cdcef2aac4ceb0e_839227_85K46vBvLZC7RJBF_9@eversrv.up.ac.za;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=up.ac.za
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=everlytickey1; d=up.ac.za;
+ h=List-Unsubscribe-Post:Reply-To:List-Unsubscribe:From:To:Subject:
+ MIME-Version:Date:Message-Id:Content-Type; i=graduation@up.ac.za;
+ bh=QYLGZngzeE4cUQVIM0/1zSdxNFzOoY7ff3A0bBtwfCI=;
+ b=laEHUM5n02V1wOH7U0OmAQTM4qqPo9tEklAAnTRZDI9VGxCjMkWmYnqsxQo0Vhw2W69KMDxGg3Gw
+   pb1UvIdjEx9W6pit4w7EHnEqCVIedtHU9PjZ70/MMtDIyghjdYK/GZc31O7l3I5f6+29v7HPHMpz
+   87VXyY6mBjZSKBRmS3fZk5AbOdd4+TlTFAMFFu0PvU3C+k44Jr815AMhFh/X34E83VCkBKv/q78q
+   S4pYMtGjYYHloQDXk0CaJQfSSCLhIJZVJPuULtHyEiFNLcwZhEWGxVRqCBYNQaPcFQgzcDJoRbO1
+   fnuWID8oSBlHjgS2xz2dGoKsxYc1pgh/fbJkBg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=everlytickey1; d=eversrv.com;
+ h=List-Unsubscribe-Post:Reply-To:List-Unsubscribe:From:To:Subject:
+ MIME-Version:Date:Message-Id:Content-Type;
+ bh=QYLGZngzeE4cUQVIM0/1zSdxNFzOoY7ff3A0bBtwfCI=;
+ b=FVzaH7cjw5uOo97dbkSUDanUdLnepZQhGh3w09AKTykMRPBdQlEhOgp4Bggnogj74OqNGbqfPqbe
+   Kjb10BgBi8kpqAxbxg+qZBwINa9iljzjmZGPSrSBpNWGRo0dyujjqWO8hl8KrbqGWvq2ZdNnsJEo
+   P7dWzwFMUBxL/ArK1im9xTRL1xXnRp3JGYjnsxZIIO0qN+mOGP2Gx9SclOyvELM4IModbuMjpDmU
+   N3W3+xeHqMD6gxzsUXGUSyO2wSpO0K3uLiuJRGYD8OPBG/j66OIQM0VjYz9kCK/4gGlEz8loGBT4
+   kMz/Gi4bgHH4t07+MfC/JtwSw6RuERCGAypc9A==
+Received: from c8af0ccfca13 (192.168.0.51) by mail11m84.outbound.eversrv.com id h3bnvu30tosl for <kumbi.shonhiwa@tuks.co.za>; Wed, 7 May 2025 07:30:07 +0200 (envelope-from <b_187777082_8cdcef2aac4ceb0e_839227_85K46vBvLZC7RJBF_9@eversrv.up.ac.za>)
+X-DMARC: YN
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Reply-To: graduation@up.ac.za
+X-Priority: 3
+X-Report-Abuse: <https://up.evlink9.net/public/contacts/complaints/hzQsEiX0NU8EGymK/85K46vBvLZC7RJBF/8cdcef2aac4ceb0e>
+List-Unsubscribe: <https://up.evlink9.net/public/contacts/unsubscribe/hzQsEiX0NU8EGymK/85K46vBvLZC7RJBF/8cdcef2aac4ceb0e>,<mailto:unsubscribe_hzQsEiX0NU8EGymK_85K46vBvLZC7RJBF_8cdcef2aac4ceb0e_9@eversrv.com>
+X-Data: 85K46vBvLZC7RJBF.8cdcef2aac4ceb0e
+X-Data-EUID: ebe7b2610dc87565ed781d1cfcdddcb7
+X-Data-Rating: 60
+X-Contact-Score: 2
+Feedback-ID: 839227:bulk:bulk:9-Wc0fnK4joMfwIEyz
+From: UP Alumni Graduation Office <graduation@up.ac.za>
+To: Kumbirai <kumbi.shonhiwa@tuks.co.za>
+Subject: =?utf-8?B?I0hlbGxvVHVrc0FsdW1uaSDigJMgQ29uR1JBRHVsYXRpb25zLCA=?=
+ =?utf-8?B?S3VtYmlyYWkh?=
+MIME-Version: 1.0
+Date: Wed, 07 May 2025 07:30:01 +0200
+Message-Id: <4320d8d9e902eccf782d10735a73b55dc2f802cbae04a110590ba51c10198657@up.ac.za>
+Content-Type: multipart/alternative; boundary="20250507707706:89512:28"
+
+--20250507707706:89512:28
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+#HelloTuksAlumni – ConGRADulations, Kumbirai!
+
+Dear Kumbirai
+
+Congratulations on this incredible milestone! Your graduation
+marks a moment of pride, joy, and well-earned celebration with
+your loved ones. It is a testament to your dedication,
+resilience, and unwavering pursuit of excellence.
+
+On behalf of the University of Pretoria, I extend my warmest
+congratulations. Your journey has been filled with challenges –
+global disruptions, economic uncertainties, and societal shifts –
+but you have persevered with determination. Your success is a
+shining example of what is possible through hard work and
+commitment, and we couldn’t be prouder.
+
+As a UP graduate, you now step into the world as a valued
+alumnus, carrying forward our legacy of excellence. We encourage
+you to stay connected with your alma mater as you continue to
+make a meaningful impact in your community and beyond. Whether
+through mentorship, advocacy or engagement, your contributions
+shape the future and inspire the next generation.
+
+Please click below for the virtual graduation ceremony.
+
+(
+https://up.evlink9.net/servlet/link/125631/839227/187777082/3920905
+)
+
+CLICK HERE FOR YOUR GRADUATION CEREMONY PROGRAMME (
+https://up.evlink9.net/servlet/link/125631/839227/187777082/3920906
+)
+
+To stay connected, we invite you to download the UP Connect
+Graduway app (or sign up via www.upalumniconnect.com (
+https://up.evlink9.net/servlet/link/125631/839227/187777082/3920907
+)), where you can network with fellow graduates, access exclusive
+opportunities, and keep up with alumni news. Also, don’t miss our
+LeadUP Podcast on Spotify and other platforms, where you can hear
+inspiring stories and insights from fellow UP alumni.
+
+Your journey with UP doesn’t end here – it’s just the beginning
+of a lifelong relationship. We encourage you to stay engaged,
+visit the UP website for updates, and follow us on social media
+to remain part of our vibrant community.
+
+JOIN THE ALUMNI COMMUNITY TODAY (
+https://up.evlink9.net/servlet/link/125631/839227/187777082/3920908
+)
+
+Once again, congratulations! We look forward to celebrating your
+future successes and welcoming you into our ever-growing alumni
+network. Additionally, don’t miss out on the LeadUP Podcast,
+available on Spotify and other podcast platforms. Subscribe today
+– click here ( https://www.up.ac.za/alumni/podcasts ) to hear
+inspiring stories from fellow alumni and friends of UP,
+discovering valuable lessons on leadership, success, growth and
+progress.
+
+Your journey as a UP alum doesn’t end here; today is just the
+beginning of the next chapter of a lifelong connection with our
+university.
+
+Congratulations once again, and we look forward to being part of
+your continued success.
+
+Kind regards,
+
+Professor Francis Petersen
+
+Vice-Chancellor and Principal
+--20250507707706:89512:28
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" style="background: #efefef; padding: 16px;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<meta name="ev-inliner" content="juice">
+<meta name="template_framework" content="foundation">
+<style type="text/css">
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4gaVI.woff2) format('woff2');
+unicode-range: U 0000-00FF, U 0131, U 0152-0153, U 02BB-02BC, U 02C6, U 02DA, U 02DC, U 2000-206F, U 2074, U 20AC, U 2122, U 2191, U 2193, U 2212, U 2215, U FEFF, U FFFD;}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4uaVIGxA.woff2) format('woff2');
+unicode-range: U 0100-024F, U 0259, U 1E00-1EFF, U 2020, U 20A0-20AB, U 20AD-20CF, U 2113, U 2C60-2C7F, U A720-A7FF;}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4vaVIGxA.woff2) format('woff2');
+unicode-range: U 0102-0103, U 0110-0111, U 0128-0129, U 0168-0169, U 01A0-01A1, U 01AF-01B0, U 1EA0-1EF9, U 20AB;}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4iaVIGxA.woff2) format('woff2');
+unicode-range: U 0590-05FF, U 200C-2010, U 20AA, U 25CC, U FB1D-FB4F;}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4jaVIGxA.woff2) format('woff2');
+unicode-range: U 0370-03FF;}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4saVIGxA.woff2) format('woff2');
+unicode-range: U 1F00-1FFF;}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4kaVIGxA.woff2) format('woff2');
+unicode-range: U 0301, U 0400-045F, U 0490-0491, U 04B0-04B1, U 2116;}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 500;
+font-stretch: 100%;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4taVIGxA.woff2) format('woff2');
+unicode-range: U 0460-052F, U 1C80-1C88, U 20B4, U 2DE0-2DFF, U A640-A69F, U FE2E-FE2F;}
+@media only screen and (max-width: 596px) {
+table.body img {
+width: 100% !important;
+height: auto;
+}
+table.body center {
+min-width: 0 !important;
+}
+table.body .container {
+width: 100% !important;
+}
+table.body .columns,
+table.body .column {
+height: auto !important;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+padding-left: 16px !important;
+padding-right: 16px !important;
+}
+table.body .columns .column,
+table.body .columns .columns,
+table.body .column .column,
+table.body .column .columns {
+padding-left: 0 !important;
+padding-right: 0 !important;
+}
+table.body .collapse .columns,
+table.body .collapse .column {
+padding-left: 0;
+padding-right: 0;
+}
+td.small-1,
+th.small-1 {
+display: inline-block !important;
+width: 8.33333% !important;
+}
+td.small-2,
+th.small-2 {
+display: inline-block !important;
+width: 16.66667% !important;
+}
+td.small-3,
+th.small-3 {
+display: inline-block !important;
+width: 25% !important;
+}
+td.small-4,
+th.small-4 {
+display: inline-block !important;
+width: 33.33333% !important;
+}
+td.small-5,
+th.small-5 {
+display: inline-block !important;
+width: 41.66667% !important;
+}
+td.small-6,
+th.small-6 {
+display: inline-block !important;
+width: 50% !important;
+}
+td.small-7,
+th.small-7 {
+display: inline-block !important;
+width: 58.33333% !important;
+}
+td.small-8,
+th.small-8 {
+display: inline-block !important;
+width: 66.66667% !important;
+}
+td.small-9,
+th.small-9 {
+display: inline-block !important;
+width: 75% !important;
+}
+td.small-10,
+th.small-10 {
+display: inline-block !important;
+width: 83.33333% !important;
+}
+td.small-11,
+th.small-11 {
+display: inline-block !important;
+width: 91.66667% !important;
+}
+td.small-12,
+th.small-12 {
+display: inline-block !important;
+width: 100% !important;
+}
+.columns td.small-12,
+.column td.small-12,
+.columns th.small-12,
+.column th.small-12 {
+display: block !important;
+width: 100% !important;
+}
+td.small-12,
+th.small-12 {
+min-width: 100% !important;
+max-width: 100% !important;
+}
+td.small-12,
+td.small-12>table,
+td.small-12,
+td.small-12>table,
+th.small-12,
+th.small-12>table,
+th.small-12,
+th.small-12>table {
+width: 100% !important;
+}
+table.body td.small-offset-1,
+table.body th.small-offset-1 {
+margin-left: 8.33333% !important;
+Margin-left: 8.33333% !important;
+}
+table.body td.small-offset-2,
+table.body th.small-offset-2 {
+margin-left: 16.66667% !important;
+Margin-left: 16.66667% !important;
+}
+table.body td.small-offset-3,
+table.body th.small-offset-3 {
+margin-left: 25% !important;
+Margin-left: 25% !important;
+}
+table.body td.small-offset-4,
+table.body th.small-offset-4 {
+margin-left: 33.33333% !important;
+Margin-left: 33.33333% !important;
+}
+table.body td.small-offset-5,
+table.body th.small-offset-5 {
+margin-left: 41.66667% !important;
+Margin-left: 41.66667% !important;
+}
+table.body td.small-offset-6,
+table.body th.small-offset-6 {
+margin-left: 50% !important;
+Margin-left: 50% !important;
+}
+table.body td.small-offset-7,
+table.body th.small-offset-7 {
+margin-left: 58.33333% !important;
+Margin-left: 58.33333% !important;
+}
+table.body td.small-offset-8,
+table.body th.small-offset-8 {
+margin-left: 66.66667% !important;
+Margin-left: 66.66667% !important;
+}
+table.body td.small-offset-9,
+table.body th.small-offset-9 {
+margin-left: 75% !important;
+Margin-left: 75% !important;
+}
+table.body td.small-offset-10,
+table.body th.small-offset-10 {
+margin-left: 83.33333% !important;
+Margin-left: 83.33333% !important;
+}
+table.body td.small-offset-11,
+table.body th.small-offset-11 {
+margin-left: 91.66667% !important;
+Margin-left: 91.66667% !important;
+}
+table.body table.columns td.expander,
+table.body table.columns th.expander {
+display: none !important;
+}
+table.body .right-text-pad,
+table.body .text-pad-right {
+padding-left: 10px !important;
+}
+table.body .left-text-pad,
+table.body .text-pad-left {
+padding-right: 10px !important;
+}
+table.menu {
+width: 100% !important;
+}
+table.menu td,
+table.menu th {
+width: auto !important;
+display: inline-block !important;
+}
+table.menu.vertical td,
+table.menu.vertical th,
+table.menu.small-vertical td,
+table.menu.small-vertical th {
+display: block !important;
+}
+table.menu[align='center'] {
+width: auto !important;
+}
+table.button.small-expand,
+table.button.small-expanded {
+width: 100% !important;
+}
+table.button.small-expand table,
+table.button.small-expanded table {
+width: 100%;
+}
+table.button.small-expand table a,
+table.button.small-expanded table a {
+text-align: center !important;
+width: 100% !important;
+padding-left: 0 !important;
+padding-right: 0 !important;
+}
+table.button.small-expand center,
+table.button.small-expanded center {
+min-width: 0;
+}
+.small-float-center {
+margin: 0 auto !important;
+float: none !important;
+text-align: center !important;
+}
+.small-text-center div h1,
+.small-text-center div h2,
+.small-text-center div h3,
+.small-text-center div h4,
+.small-text-center div h5,
+.small-text-center div h6,
+.small-text-center div p,
+.small-text-center div div,
+.small-text-center div span {
+text-align: center !important;
+}
+.small-text-left div h1,
+.small-text-left div h2,
+.small-text-left div h3,
+.small-text-left div h4,
+.small-text-left div h5,
+.small-text-left div h6,
+.small-text-left div p,
+.small-text-left div div,
+.small-text-left div span {
+text-align: left !important;
+}
+.small-text-right div h1,
+.small-text-right div h2,
+.small-text-right div h3,
+.small-text-right div h4,
+.small-text-right div h5,
+.small-text-right div h6,
+.small-text-right div p,
+.small-text-right div div,
+.small-text-right div span {
+text-align: right !important;
+}
+.small-text-center h1,
+.small-text-center h2,
+.small-text-center h3,
+.small-text-center h4,
+.small-text-center h5,
+.small-text-center h6,
+.small-text-center p,
+.small-text-center div,
+.small-text-center span {
+text-align: center !important;
+}
+.small-text-left h1,
+.small-text-left h2,
+.small-text-left h3,
+.small-text-left h4,
+.small-text-left h5,
+.small-text-left h6,
+.small-text-left p,
+.small-text-left div,
+.small-text-left span {
+text-align: left !important;
+}
+.small-text-right h1,
+.small-text-right h2,
+.small-text-right h3,
+.small-text-right h4,
+.small-text-right h5,
+.small-text-right h6,
+.small-text-right p,
+.small-text-right div,
+.small-text-right span {
+text-align: right !important;
+}
+table.body .collapse .columns,
+table.body .collapse .column {
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+}
+@media only screen and (max-width: 596px) {
+.small-float-center {
+margin: 0 auto !important;
+float: none !important;
+text-align: center !important;
+}
+.small-text-center div h1,
+.small-text-center div h2,
+.small-text-center div h3,
+.small-text-center div h4,
+.small-text-center div h5,
+.small-text-center div h6,
+.small-text-center div p,
+.small-text-center div div,
+.small-text-center div span {
+text-align: center !important;
+}
+.small-text-left div h1,
+.small-text-left div h2,
+.small-text-left div h3,
+.small-text-left div h4,
+.small-text-left div h5,
+.small-text-left div h6,
+.small-text-left div p,
+.small-text-left div div,
+.small-text-left div span {
+text-align: left !important;
+}
+.small-text-right div h1,
+.small-text-right div h2,
+.small-text-right div h3,
+.small-text-right div h4,
+.small-text-right div h5,
+.small-text-right div h6,
+.small-text-right div p,
+.small-text-right div div,
+.small-text-right div span {
+text-align: right !important;
+}
+.small-text-center h1,
+.small-text-center h2,
+.small-text-center h3,
+.small-text-center h4,
+.small-text-center h5,
+.small-text-center h6,
+.small-text-center p,
+.small-text-center div,
+.small-text-center span {
+text-align: center !important;
+}
+.small-text-left h1,
+.small-text-left h2,
+.small-text-left h3,
+.small-text-left h4,
+.small-text-left h5,
+.small-text-left h6,
+.small-text-left p,
+.small-text-left div,
+.small-text-left span {
+text-align: left !important;
+}
+.small-text-right h1,
+.small-text-right h2,
+.small-text-right h3,
+.small-text-right h4,
+.small-text-right h5,
+.small-text-right h6,
+.small-text-right p,
+.small-text-right div,
+.small-text-right span {
+text-align: right !important;
+}
+table.body .collapse .columns,
+table.body .collapse .column {
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+}
+@media only screen and (max-width: 596px) {
+table.body table.container .show-for-large {
+display: none !important;
+width: 0;
+mso-hide: all;
+overflow: hidden;
+}
+}
+@media only screen and (max-width: 596px) {
+table.body table.container .callout-inner.hide-for-large {
+display: table-cell !important;
+width: 100% !important;
+}
+}
+@media only screen and (max-width: 596px) {
+table.body table.container .hide-for-large,
+table.body table.container .row.hide-for-large {
+display: table !important;
+width: 100% !important;
+}
+}
+@media only screen and (max-width: 596px) {
+.hide-for-large {
+display: block !important;
+width: auto !important;
+overflow: visible !important;
+max-height: none !important;
+font-size: inherit !important;
+line-height: inherit !important;
+}
+}
+@media only screen {
+html {
+min-height: 100%;
+}
+}
+</style>
+<!--[if gte mso 9]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+<title></title>
+</head>
+<body style=
+"width: 100%; min-width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; Margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #58595b; font-family: 'Open Sans', Verdana, Geneva, sans-serif; font-weight: normal; text-align: left; font-size: 13px; line-height: 1.4;">
+
+
+<span style="display:none; font-size:1px; font-family:Arial; max-height:0px; max-width:0px; opacity:0; overflow:hidden; mso-hide:all;">#HelloTuksAlumni – ConGRADulations, Kumbirai!</span>
+<table class="body" style=
+"border-spacing: 0; border-collapse: collapse; vertical-align: top; height: auto; width: 100%; margin: 0; Margin: 0; background: #efefef; padding: 16px; color: #58595b; font-family: 'Open Sans', Verdana, Geneva, sans-serif; font-weight: normal; text-align: left; font-size: 13px; line-height: 1.4;">
+<tbody>
+<tr>
+<td class="center" align="center" valign="top" style="word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left;">
+<center>
+<table ev-content-builder="" class="container" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; margin: 0 auto; Margin: 0 auto; text-align: inherit; width: 594px; min-height: 0px;">
+<tbody>
+<tr>
+<td class="main_panel" style="word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; background: #ffffff; border: 0px solid #efefef;">
+<center class=""><!-- ngRepeat: section in sections -->
+<table class="collapse row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-right: 0; padding-left: 0; width: 588px; padding-bottom: 0px;" class="column small-12 large-12 last first">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left;">
+<div class="ev-image-wrap ev-control: image ev-block" style="margin-bottom: 8px; Margin-bottom: 8px;"><img src="https://cdn9.mailercdn.net/users/assets/1573/images/everlytic_banner_5_-_your_grad_day_arrived_1.png?v=1744188708571" width="594" height=
+"249" class="" alt="" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; display: block;"></div>
+<div class="ev-control: spacer ev-block" style="margin-bottom: 0px; Margin-bottom: 0px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<td style="word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; height: 14px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class="expander" style="vertical-align: top; text-align: left; visibility: hidden; width: 0; padding: 0;"></th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first last small-12 large-12 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 564px; padding-left: 16px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: text-editor cke_editable_inline cke_contents_ltr ev-block" aria-readonly="false" aria-controls="cke_66" aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" style=
+"margin-bottom: 8px; Margin-bottom: 8px; position: relative;" tabindex="0" spellcheck="false" role="textbox" aria-multiline="true" aria-label="Editor, editor2" title="Editor, editor2" aria-describedby="cke_426">
+<p style=
+"word-wrap: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; padding: 0; margin: 0; Margin: 0; color: #58595b; font-family: 'Open Sans', Verdana, Geneva, sans-serif; font-weight: normal; text-align: left; font-size: 13px; line-height: 1.4;">
+<span style="font-size:14px;"><span style="font-family:Helvetica,Arial,sans-serif;"><span style="color:#01437c;"><strong>Dear Kumbirai</strong></span><span style="color:#000000;"><br>
+&nbsp;</span><br>
+<span style="color:#000000;">Congratulations on this incredible milestone! Your graduation marks a moment of pride, joy, and well-earned celebration with your loved ones. It is a testament to your dedication, resilience, and unwavering pursuit of
+excellence.<br>
+<br>
+On behalf of the University of Pretoria, I extend my warmest congratulations. Your journey has been filled with challenges – global disruptions, economic uncertainties, and societal shifts – but you have persevered with determination. Your success
+is a shining example of what is possible through hard work and commitment, and we couldn’t be prouder.<br>
+<br>
+As a UP graduate, you now step into the world as a valued alumnus, carrying forward our legacy of excellence. We encourage you to stay connected with your alma mater as you continue to make a meaningful impact in your community and beyond. Whether
+through mentorship, advocacy or engagement, your contributions shape the future and inspire the next generation.</span></span></span><br>
+&nbsp;</p>
+<p style=
+"word-wrap: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; padding: 0; margin: 0; Margin: 0; color: #58595b; font-family: 'Open Sans', Verdana, Geneva, sans-serif; font-weight: normal; font-size: 13px; line-height: 1.4; text-align: center;">
+<span style="color:#c48b3b;"><span style="font-size:14px;"><span style="font-family:Helvetica,Arial,sans-serif;"><strong>Please click below for the virtual graduation ceremony.</strong></span></span></span></p>
+</div>
+<div class="ev-image-wrap ev-control: image ev-block" style="margin-bottom: 0px; Margin-bottom: 0px;"><a href=
+"https://up.evlink9.net/servlet/link/125631/839227/187777082/3920905" title="" style=
+"line-height: inherit; font-size: inherit; color: #1bbc9b; text-decoration: none; font-weight: bold;"><img alt="" class="" src="https://cdn9.mailercdn.net/users/assets/1573/images/upgrad_videoframe.png?v=1746181286136" width="562" height="278"
+style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; display: block; border: none;"></a></div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first last small-12 large-12 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 564px; padding-left: 16px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: divider ev-block" style="margin-bottom: 0px; Margin-bottom: 0px; border-color: rgb(88, 89, 91);">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%; font-size: 0px; height: 2px; background-color: rgb(0, 91, 170);" dataset-reset="">
+<tbody>
+<tr>
+<td style="word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; font-size: 0px; height: 2px; background-color: rgb(0, 91, 170);"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first last small-12 large-12 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 564px; padding-left: 16px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: button ev-block" style="margin-bottom: 0px; Margin-bottom: 0px;">
+<table class="button expanded" align="" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; margin: 0px; Margin: 0px; width: 100%;">
+<tbody>
+<tr>
+<td style="word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<td width="100%" style=
+"word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; vertical-align: top; width: auto; text-align: center; color: #ffffff; background: #1bbc9b; border: 1px solid #1bbc9b; padding: 10px 16px; background-color: rgb(1, 67, 124); border-width: 0px; border-color: rgb(1, 67, 124);">
+<center style="min-width: 0;"><a href="https://up.evlink9.net/servlet/link/125631/839227/187777082/3920906" style=
+"line-height: inherit; border-radius: 3px; margin: 0; Margin: 0; text-decoration: none; display: inline-block; border: 0px solid #1bbc9b; text-align: center; width: 100%; padding-left: 0; padding-right: 0; font-family: arial,helvetica,sans-serif; color: rgb(255, 255, 255); border-color: rgb(1, 67, 124); font-size: 14px; font-weight: 700;">
+CLICK HERE FOR YOUR GRADUATION CEREMONY PROGRAMME</a></center>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first last small-12 large-12 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 564px; padding-left: 16px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: text-editor ev-block" aria-readonly="false" aria-controls="cke_745" aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" style="margin-bottom: 0px; Margin-bottom: 0px; position: relative;">
+<p style=
+"word-wrap: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; padding: 0; margin: 0; Margin: 0; color: #58595b; font-family: 'Open Sans', Verdana, Geneva, sans-serif; font-weight: normal; text-align: left; font-size: 13px; line-height: 1.4;">
+<span style="font-size:14px;"><span style="font-family:Helvetica,Arial,sans-serif;"><span style="color:#000000;">To stay connected, we invite you to download the UP Connect Graduway app (or sign up via</span> <a href=
+"https://up.evlink9.net/servlet/link/125631/839227/187777082/3920907" style=
+"line-height: inherit; font-size: inherit; color: #1bbc9b; text-decoration: none; font-weight: bold;"><span style="color:#0000ff;"><u>www.upalumniconnect.com</u></span></a><span style="color:#000000;">), where you can network with fellow graduates,
+access exclusive opportunities, and keep up with alumni news. Also, don’t miss our LeadUP Podcast on Spotify and other platforms, where you can hear inspiring stories and insights from fellow UP alumni.<br>
+<br>
+Your journey with UP doesn’t end here – it’s just the beginning of a lifelong relationship. We encourage you to stay engaged, visit the UP website for updates, and follow us on social media to remain part of our vibrant
+community.</span><br></span></span></p>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first last small-12 large-12 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 564px; padding-left: 16px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: button ev-block" style="margin-bottom: 0px; Margin-bottom: 0px;">
+<table class="button expanded" align="" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; margin: 0px; Margin: 0px; width: 100%;">
+<tbody>
+<tr>
+<td style="word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<td width="100%" style=
+"word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; vertical-align: top; width: auto; text-align: center; color: #ffffff; background: #1bbc9b; border: 1px solid #1bbc9b; padding: 10px 16px; background-color: rgb(196, 139, 59); border-width: 0px; border-color: rgb(196, 139, 59);">
+<center style="min-width: 0;"><a href="https://up.evlink9.net/servlet/link/125631/839227/187777082/3920908" style=
+"line-height: inherit; border-radius: 3px; margin: 0; Margin: 0; text-decoration: none; display: inline-block; border: 0px solid #1bbc9b; text-align: center; width: 100%; padding-left: 0; padding-right: 0; font-family: arial,helvetica,sans-serif; color: rgb(255, 255, 255); border-color: rgb(196, 139, 59); font-size: 14px; font-weight: 700;">
+JOIN THE ALUMNI COMMUNITY TODAY</a></center>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first last small-12 large-12 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 564px; padding-left: 16px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: text-editor cke_editable cke_editable_inline cke_contents_ltr cke_show_borders ev-block" aria-readonly="false" aria-controls="cke_2079" aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" style=
+"margin-bottom: 0px; Margin-bottom: 0px; position: relative;" tabindex="0" spellcheck="false" role="textbox" aria-multiline="true" aria-label="Editor, editor4" title="Editor, editor4" aria-describedby="cke_2245">
+<p style=
+"word-wrap: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; padding: 0; margin: 0; Margin: 0; color: #58595b; font-family: 'Open Sans', Verdana, Geneva, sans-serif; font-weight: normal; text-align: left; font-size: 13px; line-height: 1.4;">
+<span style="font-size:14px;"><span style="font-family:Helvetica,Arial,sans-serif;"><span style="color:#000000;">Once again, congratulations! We look forward to celebrating your future successes and welcoming you into our ever-growing alumni
+network. Additionally, don’t miss out on the LeadUP Podcast, available on Spotify and other podcast platforms. Subscribe today – click</span> <a data-cke-saved-href="https://www.up.ac.za/alumni/podcasts" href=
+"https://up.evlink9.net/servlet/link/125631/839227/187777082/3920909" style=
+"line-height: inherit; font-size: inherit; color: #1bbc9b; text-decoration: none; font-weight: bold;"><span style="color:#0000ff;"><u>here</u></span></a> <span style="color:#000000;">to hear inspiring stories from fellow alumni and friends of UP,
+discovering valuable lessons on leadership, success, growth and progress.&nbsp;<br>
+<br>
+Your journey as a UP alum doesn’t end here; today is just the beginning of the next chapter of a lifelong connection with our university.&nbsp;<br>
+<br>
+Congratulations once again, and we look forward to being part of your continued success.</span></span></span></p>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first last small-12 large-12 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 564px; padding-left: 16px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: divider ev-block" style="margin-bottom: 0px; Margin-bottom: 0px; border-color: rgb(88, 89, 91);">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%; font-size: 0px; height: 2px; background-color: rgb(0, 91, 170);" dataset-reset="">
+<tbody>
+<tr>
+<td style="word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; font-size: 0px; height: 2px; background-color: rgb(0, 91, 170);"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections -->
+<table class="row ev-section" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; padding: 0; width: 100%; position: relative; display: table;">
+<tbody>
+<tr>
+<th class="first small-12 large-6 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 274px; padding-right: 8px; padding-left: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<div class="ev-control: text-editor cke_editable_inline cke_contents_ltr ev-block" aria-readonly="false" aria-controls="cke_3124" aria-activedescendant="" aria-autocomplete="list" aria-expanded="false" style=
+"margin-bottom: 0px; Margin-bottom: 0px; position: relative;" tabindex="0" spellcheck="false" role="textbox" aria-multiline="true" aria-label="Editor, editor11" title="Editor, editor11" aria-describedby="cke_4670">
+<p style=
+"word-wrap: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; padding: 0; margin: 0; Margin: 0; color: #58595b; font-family: 'Open Sans', Verdana, Geneva, sans-serif; font-weight: normal; text-align: left; font-size: 13px; line-height: 1.4;">
+<span style="color:#000000;"><span style="font-size:14px;"><span style="font-family:Helvetica,Arial,sans-serif;">Kind regards,<br>
+<strong>Professor Francis Petersen</strong><br>
+Vice-Chancellor and Principal</span></span></span></p>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</th>
+<th class="last small-12 large-6 columns" style="padding: 0; vertical-align: top; text-align: left; margin: 0 auto; Margin: 0 auto; padding-bottom: 16px; width: 274px; padding-left: 8px; padding-right: 16px;">
+<table style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;">
+<tbody>
+<tr>
+<th class="ev-block-dropzone" style="padding: 0; vertical-align: top; text-align: left; width: 100%;"></th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+</tbody>
+</table>
+<!-- end ngRepeat: section in sections --></center>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</td>
+</tr>
+</tbody>
+</table>
+<img src="https://live9.evread9.net/s/r/125631/839227/187777082/9.gif?m=85K46vBvLZC7RJBF&amp;h=53e275aefd97875fdda67b70d736cebf" alt="" height="1" width="1" style=
+"outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; display: block;">
+<style type="text/css">
+
+    @media only screen and (max-width: 596px) {
+        table.ev-footer { width: 100% !important; }
+
+        td.ev-footer-padding {
+            padding: 10px !important;
+        }
+    }
+    @media only screen and (max-width: 490px) {
+        table.ev-footer { width: 100% !important; }
+
+        td.menu-item {
+            padding: 10px !important;
+        }
+    }
+    @media only screen and (max-width: 390px) {
+        table.ev-footer { width: 100% !important; }
+
+        td.ev-footer-padding {
+            padding: 10px !important;
+        }
+    }
+    @media only screen and (max-width: 350px) {
+        table.ev-footer { width: 100% !important; }
+
+        td.ev-footer-padding {
+            padding: 10px !important;
+        }
+    }
+</style>
+
+    <br>
+<br>
+
+
+<table id="product-footer" class="body" style="background: #fefefe; border-collapse: collapse; border-spacing: 0; width: 100%" bgcolor="#FEFEFE">
+<tr>
+<td class="center" align="center" valign="top" style="border-collapse: collapse !important; margin: 0; padding: 0; text-align: center; vertical-align: top;">
+<center><!--[if mso]>
+                <table><tr><td width="580">
+                <![endif]-->
+<table class="container" ev-content-builder="" style="background: #fefefe; border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding: 0; text-align: inherit; vertical-align: top; width: 100%;" bgcolor="#FEFEFE">
+<tr style="padding: 0; text-align: left; vertical-align: top" align="left">
+<td class="ev-footer-padding" style=
+"-moz-hyphens: none; -webkit-hyphens: none; background: #fefefe; border: 0px solid #fefefe; border-collapse: collapse !important; color: #8b8b8b; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 12px; font-weight: 300; hyphens: none; line-height: 19px; margin: 0; padding: 16px; text-align: center; vertical-align: middle; word-wrap: break-word;"
+align="center" bgcolor="#FEFEFE" valign="top">
+                            
+                                
+<center>
+<table class="ev-footer" style="width: auto; text-align: center;max-width: 580px;">
+<tr>
+<td style="padding: 0px; margin: 0 auto; float: none; text-align: center; vertical-align: top; border-top: 1px solid #E1E1E1; padding-top: 10px;" align="center">
+                                                                                                                                                    
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" align="center" style=
+"text-align: center; padding: 0px 0px 10px; vertical-align: middle; margin: 0; color: #8b8b8b; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 12px; font-weight: normal; hyphens: auto; line-height: 19px;"><a href=
+"https://up.evlink9.net/public/contacts/unsubscribe/hzQsEiX0NU8EGymK/85K46vBvLZC7RJBF/8cdcef2aac4ceb0e" style="color: #8b8b8b; text-decoration: none">Unsubscribe</a> <span style="color: #94c93d;">•</span>
+<a href="https://up.evlink9.net/public/contacts/update-my-profile/85K46vBvLZC7RJBF/8cdcef2aac4ceb0e" style="color: #8b8b8b; text-decoration: none">Update Profile</a> <span style="color: #94c93d;">•</span> <a href="https://up.evlink9.net/public/messages/print-pdf/hzQsEiX0NU8EGymK/85K46vBvLZC7RJBF/8cdcef2aac4ceb0e"
+style="color: #8b8b8b; text-decoration: none">View PDF</a>
+                                                                                                                                <span style="color: #94c93d;">•</span> <a href="https://www.up.ac.za/iGaPP-programme/article/2820030/alumni-privacy-notice" style="color: #8b8b8b; text-decoration: none">
+Privacy Notice</a> <!-- View online - no option in message properties -->
+ <span style="color: #94c93d;">•</span> <a href="https://up.evlink9.net/public/messages/view-online/hzQsEiX0NU8EGymK/85K46vBvLZC7RJBF/8cdcef2aac4ceb0e" style="color: #8b8b8b; text-decoration: none">View Online</a> <!-- /View online check --></td>
+</tr>
+</table>
+
+                                                                                            </td>
+</tr>
+</table>
+</center>
+
+
+                                                        
+<center>
+<table class="ev-footer" style="width: auto;text-align: center;max-width: 580px;">
+<tr>
+<td style="padding: 0px; float: none; text-align: center; vertical-align: top; margin:0; color: #8b8b8b; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 12px; font-weight: normal; hyphens: auto; line-height: 19px;" align="center">
+                                                                                            <!-- Email Recipient -->
+                                                This email was sent to <a href="mailto:kumbi.shonhiwa@tuks.co.za" style="text-decoration: underline; font-weight: normal; color: #555555;">
+kumbi.shonhiwa@tuks.co.za</a> on 07-05-2025
+                                                                                                <br>
+<br>
+<!-- /Email Recipient -->
+ <!-- Report Abuse -->
+                                                <a href="https://up.evlink9.net/servlet/link/enterprise" style=
+"text-decoration: none;font-weight: normal; color: #555555;">University of Pretoria</a> 
+is intended for opt-in communication only. If you feel this email is unsolicited please <a href="https://up.evlink9.net/public/contacts/complaints/hzQsEiX0NU8EGymK/85K46vBvLZC7RJBF/8cdcef2aac4ceb0e" style="color: #555555; text-decoration: underline">
+report it</a> to us
+                                                <!-- /Report Abuse -->
+<br>
+<br>
+
+                                                                                                                                        <!-- Enterprise Branding -->
+                                                Email Powered By <a href="https://up.evlink9.net/servlet/link/enterprise" style="text-decoration: none;font-weight: normal; color: #555555;">
+University of Pretoria</a>
+                                                                                                    <!-- Enterprise Logo -->
+<br>
+<a href="https://up.evlink9.net/servlet/link/enterprise" style="text-decoration: none;font-weight: normal;"><img class="center" src=
+"https://cdn9.mailercdn.net/users/enterprise_logos/246_enterprise_logo_small_1542886106.jpg" style=
+"-ms-interpolation-mode: bicubic; clear: both; display: block; float: none; margin: 0 auto; max-width: 100%; outline: none; text-decoration: none; width: auto !important" align="none"></a> <!-- /Enterprise Logo -->
+                                                                                                <!-- /Enterprise Branding -->
+                                                                                    </td>
+</tr>
+</table>
+</center>
+</td>
+</tr>
+</table>
+<!--[if mso]>
+                </td></tr></table>
+                <![endif]--></center>
+</td>
+</tr>
+</table>
+</body>
+</html>
+--20250507707706:89512:28--

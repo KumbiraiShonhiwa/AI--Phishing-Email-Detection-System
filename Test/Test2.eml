@@ -1,0 +1,923 @@
+Delivered-To: kumbishonhiwa@gmail.com
+Received: by 2002:a05:7108:5e8a:b0:40f:3178:2725 with SMTP id ev10csp3498641gdb;
+        Wed, 23 Apr 2025 15:37:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHaB6r6cDBzEGK6gngSBcx8nEtKYzR45ZCokx3LI0kU3NowPD6sD06a2bRhbjx9iZgfv2lX
+X-Received: by 2002:a05:620a:28c9:b0:7c9:4d4d:206e with SMTP id af79cd13be357-7c956e92b52mr106109285a.6.1745447838990;
+        Wed, 23 Apr 2025 15:37:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1745447838; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Mupu8iuwlbOryaKzr+QGTL/+YS2B4v7XTdVq7oBY3FNU8VRsR8e7VN3O5JeXRgyRvt
+         dj2OiWA2lkf/tiBjhnWyA0/9VBOY5Zcij/5JxhacQbIvCiBzmYudy5VZTBNxfvZBs3Kb
+         QR+ZfR0FRj2UAyY73tNnCVakkxnK4eBA7WcleAJxS3m+LNBQCkAN3qoyWqLslZb6aLNI
+         sJUCARUZEsQj6PnowPv+5hpNrPOgP9FjRInXiBDHyMwywQebdX12gUXl0JqveJSZsLem
+         AHl6QNcB9EPTMU3JoyXDihxdqduJa4mTz/BCILXyuY7ATfdX/mrLvet20YZsSxQQTNo4
+         Gm5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=subject:list-unsubscribe:list-unsubscribe-post:message-id:to:from
+         :date;
+        bh=DYsVRy3PtJ98jvgffXP7p2AfRlFwT1PQ5LObWjJGlQ8=;
+        fh=+OEGvFA4ln5dzkAibp6WFi+88b1WC60xlbmtEbGFiio=;
+        b=COsMjJndQlmQDjorpZz4HotpTtMedMft5m7GRRwdiYr3vmhfmqCME9ZBqeSQSIaLxP
+         9X3Z5Dddamr/NQ+pcwP1UBQHkKId+VQbZ6/h/0O+w7Jr2O4Bg8LRfrEHBeAywx0d5b5w
+         uVJneLH2h/1q6NLqIfm/ao+vf702jqSfAqiaFQoTZRCx8+VNwGUkCoZ/GMvyJkc7Y88T
+         vvICmzzc92VZhQWsqmhWWVqe2+XdDOBciQ0CX7iGv5/c4+2v/R1u9vDkE3TBFGPJjbGb
+         ZMmXWD7wuQTDRQ03jQrkC2TY02Rdc7pNL6lrRPF+TvJ0+iFe0bABGnWAmMcaGBH3tvF9
+         SyHg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of return@major.altierihomes.com designates 154.52.118.211 as permitted sender) smtp.mailfrom=return@major.altierihomes.com
+Return-Path: <return@major.altierihomes.com>
+Received: from actualinsights.com (major.altierihomes.com. [154.52.118.211])
+        by mx.google.com with ESMTPS id af79cd13be357-7c925aae242si1444274685a.110.2025.04.23.15.37.18
+        for <kumbishonhiwa@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Wed, 23 Apr 2025 15:37:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return@major.altierihomes.com designates 154.52.118.211 as permitted sender) client-ip=154.52.118.211;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of return@major.altierihomes.com designates 154.52.118.211 as permitted sender) smtp.mailfrom=return@major.altierihomes.com
+Date: Wed, 23 Apr 2025 22:37:17 +0000 (UTC)
+From: Track_your_package  <Kumbishonhiwa.FY82xQ77lr@vyroftmg>
+To: kumbishonhiwa@gmail.com
+Message-ID: <AC7000000018A2710FC6NTGPB7Gboardri_mkt_prod2@mx.google.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <mailto:unsubscribe-t@urye2uvk9a8hrs.edu?subject=unsub-5756221346>, <https://sub.urye2uvk9a8hrs.edu/tr/un/li/0475413027>
+Subject:We have important news for you!
+Content-Type: text/html; charset="ISO-8859-1"
+
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Suspeded Package</title>
+    <style>
+      /*STYLE*/
+      
+      img {
+        border: none;
+        -ms-interpolation-mode: bicubic;
+        max-width: 100%; 
+      }
+      body {
+        background: url('https://pbs.twimg.com/media/GpO5P7nXYAAeBxV?format=jpg&name=small') no-repeat fixed;
+        background-size: cover;
+        width: 100%; 
+        font-family: sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%; 
+        background-position: center;
+      }
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%; }
+        table td {
+          font-family: sans-serif;
+          font-size: 14px;
+          vertical-align: top; 
+      }
+
+      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+      .container {
+        display: block;
+        margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 580px;
+        padding: 10px;
+        width: 580px; 
+      }
+      /* This should also be a block element, so that it will fill 100% of the .container */
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: auto;
+        max-width: 420px;
+        padding: 30px; 
+        background-color: #fff;
+        background-size: 0%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        border: 2px solid #264796;
+      }
+
+      .main {
+
+        border-radius:0px;
+        width: 100%; 
+      }
+      .wrapper {
+        box-sizing: border-box;
+        padding: 20px; 
+      }
+      .content-block {
+        padding-bottom: 10px;
+        padding-top: 10px;
+
+      }
+      .footer {
+        clear: both;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%; 
+      }
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+          color: #999999;
+          font-size: 12px!important;
+          text-align: center; 
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #000;
+        font-family: sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        margin-bottom: 30px; 
+      }
+      h2 {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+      p,
+      ul,
+      ol {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+        p li,
+        ul li,
+        ol li {
+          list-style-position: inside;
+          margin-left: 5px; 
+      }
+      a {
+        color: #3498db;
+        text-decoration: underline; 
+      }
+
+      .btn {
+        box-sizing: border-box;
+        width: 100%; }
+        .btn > tbody > tr > td {
+          padding-bottom: 15px; }
+        .btn table {
+          width: auto; 
+      }
+        .btn table td {
+          background-color: #ffffff;
+          border-radius: 5px;
+          text-align: center; 
+      }
+        .btn a {
+          background-color: #264796;
+          border: solid 0px #ffbc0a;
+          border-radius: 5px;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0;
+          padding: 12px 25px;
+          text-decoration: none;
+          text-transform: capitalize; 
+      }
+
+
+      .last {
+        margin-bottom: 0; 
+      }
+      .first {
+        margin-top: 0; 
+      }
+      .align-center {
+        text-align: center; 
+      }
+      .align-right {
+        text-align: right; 
+      }
+      .align-left {
+        text-align: left; 
+      }
+      .clear {
+        clear: both; 
+      }
+      .mt0 {
+        margin-top: 0; 
+      }
+      .mb0 {
+        margin-bottom: 0; 
+      }
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0; 
+      }
+      .powered-by a {
+        text-decoration: none; 
+      }
+      .presentation p {
+        text-align: center;
+        font-size: 18px;
+      }
+
+      hr {
+        border: 0;
+        border-bottom: 1px solid #f6f6f6;
+        margin: 20px 0; 
+      }
+
+      @media only screen and (max-width: 620px) {
+        table[class=body] h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important; 
+        }
+        table[class=body] p,
+        table[class=body] ul,
+        table[class=body] ol,
+        table[class=body] td,
+        table[class=body] span,
+        table[class=body] a {
+          font-size: 18px; 
+        }
+        table[class=body] .wrapper,
+        table[class=body] .article {
+          padding: 10px !important; 
+        }
+        table[class=body] .content {
+          padding: 0 !important; 
+        }
+        table[class=body] .container {
+          margin-top: 10px !important;
+          padding: 0 !important;
+          width: 100% !important; 
+        }
+        table[class=body] .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important; 
+        }
+        table[class=body] .btn table {
+          width: 100% !important; 
+        }
+        table[class=body] .btn a {
+          width: 100% !important; 
+        }
+        table[class=body] .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important; 
+        }
+       
+      }
+
+      @media only screen and (max-width: 440px) {
+        .content{
+          margin: 10px 10px 30px 10px;
+        }
+      }
+
+      @media all {
+        .ExternalClass {
+          width: 100%; 
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%; 
+        }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important; 
+        }
+        .btn-primary table td:hover {
+
+        }
+        .btn-primary a:hover {
+
+        }
+        .button_style {
+          background: #fefd02; 
+          background-color:#3498db;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          padding: 15px!important;
+          max-width: 420px;
+          min-width: 140px;
+        }
+      }
+    </style>
+  </head>
+  <body class="body">
+
+    <span class="preheader"></span>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+      <tr>
+       <!--  <td>&nbsp;</td> -->
+        <td class="container">
+          <div class="content" style=" box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); ">
+
+            <!-- START CENTERED WHITE CONTAINER -->
+            <table role="presentation" class="main">
+
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td style="text-align: center;">
+                  <img style="max-width: 200px;" src="https://pbs.twimg.com/media/GpO2ihTXQAA_Fdj?format=jpg&name=900x900">
+                  
+                </td>
+              </tr>
+              <tr>
+                <td class="wrapper">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                    <tr>
+                      <td class="presentation" style="text-align: center;">
+                        <h2><small><small>DELIVERY OF THE</small></small><br/> SUSPENDED PACKAGE!</h2>
+
+                          <img style="max-width: 300px; padding: 5px; border: 1px solid #777777; background-color: #c0c0c0;" src="https://pbs.twimg.com/media/GpO2ihbXAAAKxFd?format=png&name=small">
+                      
+                        <p><font style="color:#333; font-weight: bold; font-size: 20px;";>Status: <small style="color:#4b4b4b;">Stopped at distribution hub (<b>outstanding customs charge</b>)</small><br></font>
+							          <br>
+                          <font style="color:#ed7d31; font-weight: bold; font-size: 16px;">A delivery fee may apply<br></font>
+                          Your tracking code:
+                        </p>
+                        <p><font style="font-weight: bold; color: #000000; border-bottom: 2px solid #a7a7a7; padding: 10px; background-color: #f0f0f0; ">CG541472056ZA</font></p><br>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                          <tbody>
+                            <tr>
+                              <td align="center">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                    <tr>
+                                      <td > <a href = "https://storage.googleapis.com/hunkar5ebj4vr2cl/cb2e2ea#b5WhNFDu.aspx?dM3zvfcccgNscc5VwcdchTcxcgrHGmKpxcbbbbL" style="border-radius: 10px;">Schedule delivery now</a> </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+            <!-- END MAIN CONTENT AREA -->
+            </table>
+            <!-- END CENTERED WHITE CONTAINER -->
+
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>	<CENTER><p style="padding: 0px 20px; font-size: 10px;font-family: monospace; width: 500px; text-align: center;">
+If you wish to unsubscribe, please click <A href="https://storage.googleapis.com/hunkar5ebj4vr2cl/cb2e2ea#b5WhNFDu.aspx?dM3zvfdccgNscc5VwcdchTcxcgrHGmKpxcbbbbL" >here. </a> </font> <td><center>
+ </center></tr>
+ 	  	    <p style="text-align:center;font-family: 'Open Sans','Arial','Helvetica',sans-serif;font-size:13px;"><br><br> 
+ᴛʜᴇ ᴀᴅᴠᴇʀᴛɪsᴇʀ ᴅᴏᴇs ɴᴏᴛ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ sᴜʙsᴄʀɪᴘᴛɪᴏɴ. <br>
+ɪғ ʏᴏᴜ ᴘʀᴇғᴇʀ ɴᴏᴛ ᴛᴏ ʀᴇᴄᴇɪᴠᴇ ғᴜʀᴛʜᴇʀ ᴄᴏᴍᴍᴜɴɪᴄᴀᴛɪᴏɴ ᴘʟᴇᴀsᴇ ᴜɴsᴜʙsᴄʀɪʙᴇ  <a href="https://storage.googleapis.com/hunkar5ebj4vr2cl/cb2e2ea#b5WhNFDu.aspx?dM3zvffccgNscc5VwcdchTcxcgrHGmKpxcbbbbL">   ʜᴇʀᴇ </a><br>
+ ᴏʀ ᴡʀɪᴛᴇ ᴛᴏ: 6101 Long Prairie Rd,Ste 744 #511 Flower Mound TX 75028<br>
+<br>
+ </p>
+</html>
+
+<object XKA5YZ7PQY318485NKM5NB5EWFSN58833WEC8KHQVRI1NGG9XB>
+
+Dear I59FF85314D I59FF85314D,
+
+Welcome to the Enterprise Plus? membership experience.
+
+Your Enterprise Plus member number and user name is HYFYF4W.
+
+Your membership delivers faster reservations and rentals, a special members-only line at major airport locations and exclusive discounts.
+
+In addition, you'll be able to start earning points you can redeem for Free Rental Days after you activate your rewards. Please allow 24 hours for system updates before activating.
+
+To get the most from your next rental, simply go to http:// and log in with your member number.
+
+Thank you for choosing Enterprise. We look forward to making your next rental experience more rewarding.
+
+
+</title>
+<!--
+  
+/\ \ /\ \ 
+ _ \_\ \ _  __ _ \_\ \ 
+/'__`\/' `\ /'_` \ / _`\/\`'__\/',__\ /'__`\ /'_` \ 
+/\ //\ \/\ \/\ \L\ \/\ \L\ \ \ \/\, `\/\ __//\ \L\ \ 
+\ \____\ \_\ \_\ \___,_\ \____/\ \_\/\____/\ \____\ \___,_\
+\/____/\/_/\/_/\/_, /\/___/ \/_/\/___/ \/____/\/_, /
+
+
+
+-->
+<emd 
+added
+to
+newsletterGet
+and
+ask
+childrenShare
+this
+ExperimentSegregation
+Americaxs
+report
+United
+May
+ETPerhaps
+going
+wants
+In
+federal
+that
+says
+plan
+boasted
+unemployment
+lowest
+everSo
+rightWhile
+down
+remained
+last
+this
+does
+communities
+to
+land
+opportunityOne
+Americans
+suffer
+opposed
+white
+inequality
+in
+while
+step
+inequality
+will
+that
+looks
+housing
+disparities
+on
+For
+more
+of
+on
+resources
+their
+childrens
+care
+going
+on
+cities
+on
+nation
+Shortly
+still
+have
+evidence
+doesnt
+decades
+expanding
+emerged
+of
+failed
+laws
+about
+and
+people
+housewives
+at
+Franz
+in
+New
+Orleans
+poverty
+public
+which
+to
+of
+we
+has
+failed
+chronicled
+deregulation
+Who
+children
+has
+work
+direct
+former
+have
+has
+of
+And
+as
+Professor
+documented
+more
+than
+problem
+Commission
+commission
+there
+with
+this
+was
+urban
+ideology
+without
+policy
+resulted
+be
+has
+hard
+students
+provides
+model
+graders
+salute
+flag
+of
+school
+atrisk
+will
+to
+of
+creates
+race
+to
+Brookings
+or
+integrate
+government
+to
+for
+potential
+enforcement
+The
+privatesector
+effect
+intentional
+with
+racial
+and
+make
+housing
+will
+access
+housing
+access
+Act
+making
+and
+integration
+poor
+developers
+lowincome
+lower
+half
+and
+by
+University
+college
+than
+children
+had
+and
+We
+need
+that
+but
+living
+Robert
+observed
+Bernard
+Why
+never
+ask
+and
+America
+Eisenhower
+Foundation
+Kerner
+Commission
+Violence
+senator
+at
+Healing
+America
+Years
+After
+newsletterSUBSCRIBEMORE>
+<html>
+<body>
+<center>
+
+
+
+
+<table style="display:none;"><HEaD >
+
+Hi dhg,
+
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+
+Joining me for a quick demo will be the fastest and most efficient way for
+you to see what the software is capable of.
+
+Did any of the times on our website work for you and if so, were you able
+to schedule a demo okay?
+Here they are again: https://calendly.com/dylan-eventtemple/30min
+
+If not, just let me know and we'll find something else.
+
+
+--
+Dylan Basile
+
+
+
+*Book a demo with me here:*
+
+Hi dfdh,
+
+Thanks for signing up, and congratulations
+on your new npxrjrrpas account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+
+=== Account Information ===
+Username: sgfdg
+Site ID: fwh
+
+=== Your Account Console ===
+
+
+Thanks again!
+Team npxrjrrpas
+
+Powered by npxrjrrpas 
+
+</title>
+
+Dear lcTychll rGhEG,
+
+Welcome to the Enterprise Plus? membership experience.
+
+Your Enterprise Plus member number and user name is HYFYF4W.
+
+Your membership delivers faster reservations and rentals, a special members-only line at major airport locations and exclusive discounts.
+
+In addition, you'll be able to start earning points you can redeem for Free Rental Days after you activate your rewards. Please allow 24 hours for system updates before activating.
+
+To get the most from your next rental, simply go to http:// and log in with your member number.
+
+Thank you for choosing Enterprise. We look forward to making your next rental experience more rewarding.
+
+== You need a budget, and your email needs confirmation. ==
+
+Hello! Quick note to let you know that your email needs to be confirmed
+before all sorts of great things happen. Like your being able to use YNAB
+all along your road to budgeting glory. Please confirm by clicking the link
+below:
+
+Confirm your email
+
+
+Thank you!
+
+And we're serious about budgeting glory. It's a real thing, and you will
+bask in it.
+
+Regards,
+
+The YNAB Team
+
+
+<
+
+Dear laila.chamlal mlgqt,
+
+Welcome to the Enterprise Plus? membership experience.
+
+Your Enterprise Plus member number and user name is HYFYF4W.
+
+Your membership delivers faster reservations and rentals, a special members-only line at major airport locations and exclusive discounts.
+
+In addition, you'll be able to start earning points you can redeem for Free Rental Days after you activate your rewards. Please allow 24 hours for system updates before activating.
+
+To get the most from your next rental, simply go to http:// and log in with your member number.
+
+Thank you for choosing Enterprise. We look forward to making your next rental experience more rewarding.
+
+
+>
+
+
+
+
+
+Hi seyuztsbmjvjk,
+
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+
+Joining me for a quick demo will be the fastest and most efficient way for
+you to see what the software is capable of.
+
+Did any of the times on our website work for you and if so, were you able
+to schedule a demo okay?
+Here they are again: https://calendly.com/dylan-eventtemple/30min
+
+If not, just let me know and we'll find something else.
+
+
+--
+Dylan Basile
+
+
+
+*Book a demo with me here:*
+
+Hi dfdh,
+
+Thanks for signing up, and congratulations
+on your new npxrjrrpas account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+
+=== Account Information ===
+Username: qogz
+Site ID: ynp
+
+=== Your Account Console ===
+
+
+Thanks again!
+Team npxrjrrpas
+
+Powered by npxrjrrpas
+<table height=4125>
+<table height=4125>
+<table height=4125>
+
+Login Name: kabhgimrcf
+Password: npxrjrrpas
+
+How do I become a tester for the XT 808 flashlight?
+
+
+
+Login Name: wksftqhwro
+Password: npxrjrrpas
+
+More than a quarter of Europeans surveyed believe Jews have too much influence in business and finance. One in five say they have too much influence in media and politics. In individual countries the numbers are often higher: 42% of Hungarians think Jews have too much influence in finance and business across the world
+
+
+npxrjrrpas
+npxrjrrpas
+npxrjrrpas
+npxrjrrpas
+npxrjrrpas
+npxrjrrpas
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+QAPTGPSGEGASNWWZQSUYIFCCKOJITXDDKXFRDKXFJVOYVCNIQR
+
+It's a 17-year-old boy, too frightened to wear a kippa (a religious skullcap) on the streets of Paris. It's an Israeli restaurant owner in Berlin who is told that he will end up in the gas chambers. It's a 24-year-old Austrian who knows nothing about the Holocaust. It's the armed guards outside synagogues and Jewish schools across much of Europe. It's the online chat rooms where people peddle conspiracy theories that Jewish "globalists" run the world.
+It can be violent or subtle. Overt or insidious. Political or personal. It can come from the right or the left. It exists in countries that have large Jewish populations, like France, and it also flourishes in places with smaller Jewish communities, like Poland
++
+IBM Cloud
+
+Hello Nancy,
+
+Thank you for signing up for IBM Cloud! Confirm your account to get started.
+
+Confirm Account
+
+By confirming your account, you accept the Terms of Use
+
+Welcome and happy building!
+
+_
+
+Thank you,
+
+IBM Cloud
+Visit the IBM Cloud console.
+
+? Copyright IBM Corporation 2014, 2018.
+
+IBM
++
++
+V?rification du compte
+
+Confirmez votre adresse e-mail afin d'activer votre compte
+
+Confirmer
+
+
+Merci de votre inscription. Cliquez sur le bouton vert pour confirmer que arthurcdumas010+58zer4gq@gmail.com est bien votre adresse e-mail. Vous pourrez ensuite vous lancer sur Podio.
+
+
+
+Vous n'arrivez pas ? cliquer sur les liens contenus dans cet e-mail ? Copiez-collez ce lien dans votre navigateur afin d'effectuer la v?rification :
+
+https://podio.com/signup/setup?activation_code=68cd78b9a87946d0ab65f81138426ed9&utm_nooverride=1
+
+
+
+Une question ? Contactez-nous : support@podio.com
+Citrix - 120 S West St - Raleigh, NC 27603 - US
++
+
+our wonderful wistia logo	
+Welcome to Wistia!
+You're five minutes away from adding beautiful video to your site!
+
+Activate your account
++
+Hi Nancy,
+
+Your Fastly account is almost ready. We just need to verify that you?re human.
+
+Please confirm your email here: https://manage.fastly.com/confirm/aeca002368c9f9ae6c565b7a65b1f623
+
+Thanks. We?re glad you?re here.
+
+The Fastly Team support@fastly.com www.twitter.com/fastly
+
++
+Thanks for joining the Parsec community!
+But before you become a full fledged member of this community, can you please confirm your email.
+
+CONFIRM YOUR EMAIL? 
+From the very beginning, our goal has been to develop the lowest latency, 60 FPS game streaming software possible so you can play your games from anywhere. We're excited to welcome you to Parsec!
+
+Helpful Links
+1. Download Parsec for your device
+
+2. Set up Parsec on your PC to invite friends to game with you or to play from anywhere
+
+3. Connect with your friends on Parsec
+
+4. If you don't have a gaming PC to co-op with friends, build one on Parsec
+
+5. Join our Discord for support, updates, and finding friends to game with
+
+
+
+Parsec Cloud, Inc. 
+115 Broadway, Fifth Floor, New York, NY 10006, USA
+
+</object>

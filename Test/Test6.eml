@@ -1,0 +1,161 @@
+Delivered-To: kumbishonhiwa@gmail.com
+Received: by 2002:a05:7108:5e8a:b0:40f:3178:2725 with SMTP id ev10csp5076699gdb;
+        Sat, 26 Apr 2025 01:50:24 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFIkOiiSuTMYMDVEWj+oiDBFheaqnnrr9hTddboB9HLFKMWwZJ7g1eF7E0wRJhcMDuwCLX+
+X-Received: by 2002:a05:600c:4e0c:b0:43d:300f:fa51 with SMTP id 5b1f17b1804b1-440a65e6b0dmr42628855e9.9.1745657424262;
+        Sat, 26 Apr 2025 01:50:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1745657424; cv=none;
+        d=google.com; s=arc-20240605;
+        b=avx1geXZd7H1NBh1iKqTPW4evfCKffz8iSqFuFwBfic7325lD52t+fnFbUKW8/mXfm
+         5I4uVRRqXmr80UySAUtjXZmXXmfNUyhmtSr1tePmZ+3ID1y/IJebvG0RfKJkmFdH6usb
+         R7TbCdf6J8xWi2VhQjdPSkK9jb4IFntjqhGT9L0Rj+0NNgvEejDXA1Vh6VM8W/DpTmXu
+         bF4mxewg2OmNNn8EaGCZi6Q7U8qhjdm5xIdTqZ8ZdcRowQPPV2R2Xe4TPH8P3ED3UlA2
+         v6kK3Z2BpKcgpIBQzHdB5JxzRnffFxhp51J8CYM/WeN5MY5svizLtDiyPrB6kFs4hTt1
+         WRkA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=date:content-transfer-encoding:to:subject:from:message-id
+         :mime-version;
+        bh=GgR+xI6p639AX63iKKGcMOiZ5o5Xq5eJvv/0kqTfP1w=;
+        fh=+OEGvFA4ln5dzkAibp6WFi+88b1WC60xlbmtEbGFiio=;
+        b=aeLXVmHx3BsnU9XshEeATuZ/thF86SYQ4nUO269PgdWgMV4+CEL6HtNMlhUhKTWiWC
+         iNA8OHPFodlYaVU6zxvMOzHlcNZ0PPqI82jRIX44t+5eXaXr2TrHaqHSmZA6lSP5hCer
+         JowX+2VT0j5zz5ehX2gCgQVg+A+3K/8w3Rg0UolPpIC4mSpTGPlXr6TAGwSt2DkCuTvQ
+         te4Xtejimal2RCkh3hd1z5/3LwXZw/kso/O75roE7SaW08hGorXIVltGadTNQigCn++Q
+         V7/gbkkmt35oToYR4eY2wGv5vTQbJeVrbkXscRxHGfYa28Rx/tPhZCZ8xBd+X4sFLgcP
+         wpAQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of return+kumbishonhiwa@vivalto-sante.com designates 2001:41d0:304:200::daef as permitted sender) smtp.mailfrom=return+kumbishonhiwa@vivalto-sante.com
+Return-Path: <return+kumbishonhiwa@vivalto-sante.com>
+Received: from 0z6b.anwb.nl (vps-84714681.vps.ovh.net. [2001:41d0:304:200::daef])
+        by mx.google.com with ESMTPS id 5b1f17b1804b1-4409d29b594si40562705e9.1.2025.04.26.01.50.24
+        for <kumbishonhiwa@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Sat, 26 Apr 2025 01:50:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return+kumbishonhiwa@vivalto-sante.com designates 2001:41d0:304:200::daef as permitted sender) client-ip=2001:41d0:304:200::daef;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of return+kumbishonhiwa@vivalto-sante.com designates 2001:41d0:304:200::daef as permitted sender) smtp.mailfrom=return+kumbishonhiwa@vivalto-sante.com
+MIME-Version: 1.0
+Message-Id: <oacnJLE.72581.392.bOB@ZidrG.us>
+From: PaymentDeclined® <contact@netflix.ZidrG.us>
+Subject: kumbishonhiwa!, Your account Netflix will be removed today.⚠#Sat, 26 Apr 2025 10:50:09 +0200
+To: kumbishonhiwa@gmail.com
+Content-Transfer-Encoding: binary
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 26 Apr 2025 10:50:09 +0200
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head><meta http-equiv="Content-Language" content="fr"></head><body><img src="" width="1" height="1"><div style="background-color:#f1f1f1;margin:0;color:rgb(51,51,51);font-weight:300;margin-top:0px;text-align:center"> 
+ 
+<center>
+<font size="5" color="white" face="Cooper Black">
+              <marquee hspace="100" scrolldelay="120" width="50%" bgcolor="#d81f26"><b><i> Your Netflix Subscription Has Expired Today!</i></b></marquee>
+            </font>
+</br>
+</br>
+</br>
+
+<a style="text-decoration:none;color:rgb(51,51,51);" https://bit.ly/40ekRpe#cl/39188_md/211/5196/3035/46013/43946">
+ 
+<table><tr><td><h1 style="color:#d81f26;font-size:100px; font-family:Georgia">NETFLIX<br/>
+</td></tr></table>
+ 
+<div style="background:#d81f26;color:#edf8fe;width:700px;border-radius:13px 13px 0px 00px"><h1 style="padding:10px;font-size:25px">
+	Payment attempt failure while renewing your subscription for Netflix
+ </h1></div>
+<b style="font-size:25px"><br>Your Netflix Subscription Has Expired Today!
+</b><br><br><table style="background-color:#fae4e6;"><tr><td><b style='font: 40px "Arial", sans-serif; 
+display: block;
+text-decoration: none;
+text-align: center;
+width: 53px;
+height: auto;
+background:linear-gradient(to top , #ff0000  1000% , #ff0000 100%);
+padding: 10px;
+border-width:px;
+border-color: #ff0000 ;
+border-radius: 12007px;
+color: #ff0000  ;
+font-weight: bold;'> &#10069;
+ </b> </td>
+<td>
+<div style="background:#fae4e6;width:600px;padding-left:20px;padding-top:20px;padding-bottom:20px" align="left"><b style="font-size:30px;font-weight: bold;">
+	Dear kumbishonhiwa, We Failed To Renew Your Netflix Membership.</b><br><span style="font-size:30px;"></span></div>
+ 
+ 
+ 
+ 
+</td></tr><td></td><tr></tr></table><table width="700" border="0" cellpadding="0"><tr align="center"><td>
+                                        <hr></td>
+                                </tr><tr><td>
+
+<table style="width:389px; cellspacing:0; cellpadding:6; border:20; align:center; "><tr><td colspan="2" bgcolor="#f1f1f1">
+		<font font-family: courier times serif face="Calibri, Helvetica, Arial, sans-serif;" color="#343633"><strong>
+	Information about your account:
+</strong></font></td></tr><tr><td width="55%" bgcolor="#f1f1f1"><strong> 
+ 
+<font size="4" color="#084B76">
+			<span>Subscription ID <span></span></span></font></strong><font size="4" face="Calibri, Helvetica, Arial, sans-serif;" color="#084B76"><strong>
+		:</strong></font></td><td width="64%" bgcolor="#f1f1f1"><font size="4"><strong>
+		F9581751-US</strong></font>
+		</td></tr>
+		<tr><td bgcolor="#f1f1f1"><font size="4" face="Calibri, Helvetica, Arial, sans-serif;" color="#084B76"><strong>
+			<span>Product:  <span>:</span></span></strong></font></td><td bgcolor="#f1f1f1"><font size="4"> 
+			<strong>Netflix </strong> </font></td></tr>	<tr><td bgcolor="#f1f1f1"><font size="4" face="Calibri, Helvetica, Arial, sans-serif;" color="#084B76"><strong>
+			<span>User Mail <span>:</span></span></strong></font></td><td bgcolor="#f1f1f1"><font size="4"> 
+			<strong>kumbishonhiwa@gmail.com </strong> </font></td></tr><tr><td bgcolor="#f1f1f1"><strong><font face="Calibri, Helvetica, Arial, sans-serif;" size="4" color="#084B76">
+			<span>Expiration date<span></span></span></font></strong><font size="4" face="Calibri, Helvetica, Arial, sans-serif;" color="#084B76"><strong>:</strong></font></td><td bgcolor="#f1f1f1">
+						<u><font size="4" color="#FF0000"><b>Sat, 26 Apr 2025 10:50:09 +0200</b></font></u><mark><span><font size="4"><u style="color:blue;"><b style="color:red"><span> </span></b></u></font></span></mark></td></tr></table></div></td>
+ </tr><tr style="margin:0"><td style="padding:0;margin:0;color:rgb(51,51,51);font-size:17px;padding-bottom:12px;font-family:Lucida Sans
+ 
+,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;line-height:1.3;text-align:left"> <br><span style="margin:0;font-weight:600">
+ 
+We tried to renew your subscription at the end of each billing cycle, but your monthly payment has failed. We therefore had to cancel your subscription. Obviously, we would love to see you again. <br>If you wish to renew your subscription click on the link below.
+</span>
+ </td>
+ </tr>
+
+ <tr><td align="center" style="padding:10px 40px 0"><br><strong style="padding: 16px 30px; background-color: #d81f26; color: #e2eff9; border: none; border-radius: 30px; font-size: 20px; letter-spacing: 1px;  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); font-family: Georgia, serif;">
+ 
+  <a style="text-decoration:none;color:rgb(51,51,51);" href="https://u46509964.ct.sendgrid.net/ls/click?upn=u001.16O0hg1-2FLz1kpPxGHUZbqV2MoRmYvlVOEOZAila7b81I-2Boc1m2bB-2BeJM3UDkC7AqfAe2etKHd-2BQoA9LvGacYEA-3D-3DVz7i_kA6zf2QI-2B6ZgnuACMEx8JaSLKfrYfGOK2-2FXCMSvtbO0sktAudYBLtcgZn6IDo-2FmYqN7pGbEgVBJPWeFphy-2F56Q1QtRT2-2ByRHHA-2BCGhgStjtwifxkirKy-2BiYbAck8K1OE39r30QzZBVTgEiov3uNLPe0fuU2h5f6wTXMJESvojPGnqtpCXGGYytVTLnTaz52dUbLYdYnT6XI5W1T1KSgJYmJ9u5bXJrRnTuftanZRqpAzp2TxKot6zp6vX9-2FRlE10EBgnmanL2tpDeUF1wag-2FdCTPdH5iSYnMxz2ScxdxrYYENRsmNP-2Fco6JtPdRtNjtwA7gdUXsfwokesuwfhS4VqsQYBGLgygPPT9LcQPmw9Ww1HATl6ZrT6AvBhOyrotsYvFbRwxQLxbYVhbHq5-2BPh85krpabRx7qrLwxaUMwMeMSWromIEAmXWrwphlP-2BBgxsCPEYR-2F709M2nND97A2-2BrT5-2BRiVY2Ay5otLEnvh6nDRnkMvBPiX-2Beu3L-2B07WhzsoAqusM3OAgRQTk9AQb6PaquCKpNw9dAFyA3TNVom2nEaScevQbKPCqQKWWo-2BLYmQPT-2BYyxrsr4OD47qtyMWJtYAKAEb4Y8TkzvkdWH02X-2BQ-2FOy6Y0QgN-2BKc5NtMlWiq2F0aWj-2F0NigJOdZ6xg0jRfal8kNhWPJoyEi9IbGOck4ItODRonUEa2BJr2FFiVSorQKeN3xWS0Z6snR-2B5Ka55XXw522PEAtxpPlnU-2FBOGUgdj1tQxixRgvvsV4qF3fuqWOKlT0XztsP4xe7J9l721GTKw-3D-3D">Update my payment details </a></strong>
+ </td>
+ </tr>
+
+ <br><br><tr style="margin:0"><td style="padding:0;margin:0;color:rgb(51,51,51);font-size:17px;padding-bottom:12px;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;line-height:1.3;text-align:left;color:#000000"><br><br> 
+In Case Of Ignorance, Your Services Will Be Completely Suspended Within 24 Hours According To The Terms Defined In Our Contracts<br><br>	Thank you for trusting us,<br>best regards </td>
+ </tr></table><tr style="margin:0"><td style="padding:0;margin:0;color:rgb(51,51,51);width:100%;font-size:13px;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;line-height:18px" align="center"> 
+ <table style="border:0;margin:0;border-spacing:0;width:100%;font-size:inherit;line-height:18px;border-collapse:collapse;text-align:center">
+ <div>
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<center>
+		
+		</a>
+		<br />
+		If you no longer wish to receive these emails, you may unsubscribe by <a href="https://tinyurl.com/3jkf2767/un/39188_md/211/5196/3035/46013/43946" > clicking here </a> or by writing to 6130 W Flamingo Rd. Las Vegas, NV 89103
+		<br />
+				To be removed from our list simply <a href="https://tinyurl.com/3jkf2767/oop/39188_md/211/5196/3035/46013/43946" >click here</a> or write to us at :<br />
+		209 Myrtle,,Ave.Kingsport,TN,37660<br />
+
+	</center>
+		<br />
+
+</div>
+<img src="https://tinyurl.com/3jkf2767/op/39188_md/211/5196/3035/46013/43946" width='1' height='1'>
+</body></html>

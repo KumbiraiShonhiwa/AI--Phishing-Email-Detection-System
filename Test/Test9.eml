@@ -1,0 +1,502 @@
+Delivered-To: kumbishonhiwa@gmail.com
+Received: by 2002:a05:7108:7a05:b0:40f:3178:2725 with SMTP id ik5csp1717936gdb;
+        Sat, 10 May 2025 03:47:07 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGsR+7/gqTW0bgu3xG3YqBsuGV/9YVGujN4twKIjxOVsS7a+eobu0FjGEFM01zjwNPqp7Ih
+X-Received: by 2002:a05:6000:1845:b0:3a0:b977:26ba with SMTP id ffacd0b85a97d-3a1f64276bcmr5072967f8f.12.1746874027535;
+        Sat, 10 May 2025 03:47:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746874027; cv=none;
+        d=google.com; s=arc-20240605;
+        b=FYnZ5mnK1PGWPP66ThDOJWd5lwLl6YklRsuVUWksGG3CybWxjSt/ALVF09Er05Rccs
+         2uP9850EUiQnHzGZR/Z5B55cHbNlWWRm1TVWE/B/yV6GvdKchGCZKfjEP36+dNsC+WYc
+         66Urrsz9Cfj0C1UvZMMEIxILIm1Fc9WOJAg4Gh8lAmN/8/Ex9M/fyrAaaOOkIEh0b9AE
+         +iJ4h1Z9eAvxv7klJXUgrD4vUJSG5M1qQxdCPbTohE8YiQu6INm14TSYc5ladZx4QxvR
+         yf6bl8AoRO1FsaSX7/u9gu+XdV7CzPQG9xQ5RzvcZVqSTHVAot3zOOb9+UZwhetGrhcQ
+         pSVg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:mime-version:subject:to:sender:from:date
+         :domainkey-signature:dkim-signature:message-id;
+        bh=VdSmsX/xzovjCwKYu0/M8wzC/+hJRXERedo1QVHtz+8=;
+        fh=+OEGvFA4ln5dzkAibp6WFi+88b1WC60xlbmtEbGFiio=;
+        b=iNFFqO17Yfa7kAtLBMT+3xuRpXI8xThz2Xj9ZNeX9Cet8fEQ18wECoipR2E9jKb50M
+         iytVorVFvllpo1mBOKfYW1uUv1KkLIFyMqUncRhLzpeYI/aaXJp7pN6FJrxiKupfFUc9
+         SqJnDS5GhIsoJZ4a6O5Ekn37e8M1XVTAAOcjEVF+h1U3y35aI/W20rZzzCrjZq9pdAAr
+         FzJMIXYR9Yx65ENYmlUlLW7z65kBZOwNHTslBemuWdGvEvfZYQbEAUY8lJmPYfxy2Me9
+         dW8S7pMziQa5DY/kvwGz38uMrvKB+6skHy5ctsfuRygCd5PTeVNGDycmgiH3Rqqq9L+g
+         rK4g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@AoIms939kJ33ZhuymQ.referencescheme.org.uk header.s=selector2 header.b=a3KxyeHk;
+       spf=pass (google.com: domain of return@walters.dahhsin.com designates 188.40.188.43 as permitted sender) smtp.mailfrom=Return@walters.dahhsin.com
+Return-Path: <Return@walters.dahhsin.com>
+Received: from newsroom.bangordailynews.com (static.43.188.40.188.clients.your-server.de. [188.40.188.43])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-3a1f5c1e38bsi3185079f8f.847.2025.05.10.03.47.07
+        for <kumbishonhiwa@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Sat, 10 May 2025 03:47:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return@walters.dahhsin.com designates 188.40.188.43 as permitted sender) client-ip=188.40.188.43;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@AoIms939kJ33ZhuymQ.referencescheme.org.uk header.s=selector2 header.b=a3KxyeHk;
+       spf=pass (google.com: domain of return@walters.dahhsin.com designates 188.40.188.43 as permitted sender) smtp.mailfrom=Return@walters.dahhsin.com
+Message-ID: <681f2eab.5d0a0220.1c7c30.c6f8SMTPIN_ADDED_MISSING@mx.google.com>
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=selector2; d=AoIms939kJ33ZhuymQ.referencescheme.org.uk;
+ h=Date:From:Sender:To:Subject:MIME-Version:Content-Transfer-Encoding:Content-Type; i=y6xp8p73qrmt@AoIms939kJ33ZhuymQ.referencescheme.org.uk;
+ bh=ylUEUZ5JMGLcLbRyAR0L7ZELmKQ=;
+ b=a3KxyeHkJQv800KyZGPrQc89MJMB/Ddp6LXKe6D9woKW0kDyDTD7js1xxoyBITcwusU6YXgV2yyq
+   c1lZsxjDVkaRZjzVjMNE4Hh3PIJQfMKUplM/FYxESCP5fFawB9/C8wufOz+DhmbkQSDETgDWOi/r
+   HqVWN3XASyzD8kavLYtyjyZBjRcueKvUUWCln5ZnYkJWS/brYxtYt/ySMH0sUg/KCWQ57/rPsTkn
+   P35usmap/k8ygvfHRMSa9SOuTIl9Or4ecOqC4fRGRjp4oBeG7WQXHc+MYZ+yHUZ4hwKi4DHv/nx7
+   6cJvshARKwkmZ+CzkvmPSfAxgJL/2wdReWOH4A==
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=selector2; d=AoIms939kJ33ZhuymQ.referencescheme.org.uk;
+ b=lP8e8SGFdd0syiy+3A0UTQztGylPtcDR/HTzDmAYDYeDV+yZTcknHqsLfrew0WQaFgYHYfD7wGCP
+   YvM36HS9RQE9S+PUENMggcyA0TPSNrBTSuRiBzrRllGQuFBIp/X+duwUs/pLYD7LTsrJsLuV8+aM
+   wvS04DeFUVZqcNXXp5A/w1IpOoxKPk2KpWCz+y+Ir9nPa9e1F0UKKuvJBjiVEnehy09QHrR3qmrW
+   k9p11Aa+ZFpchb5g8YkTi4V1vhex179Sgbg1UPE8UahcOxrTO25MO/TVC2sacc4xbdgXCOYrBkAG
+   W44KDJJKBhhX+EWboTmjY96zTu3RGi61bDO6lw==;
+Received: from smtp.I7IDBGRGMC1ZNLYHWY.org (enr2-mrelay-I7IDBGRGMC1ZNLYHWY.org. ) by mx.google.com with ESMTP id t6si5997511qvm.25.2019.02.12.06.38.06 for kandy.mukole@gmail.com; Sat, 10 May 2025 10:47:07 +0000 (UTC)
+Received: from pdr8-services-05v.prod.zvsntlmimntt.org (HELO pdr8-services-05v) () by smtp.avnqgbzx.org with SMTP; Sat, 10 May 2025 10:47:07 +0000 (UTC)
+Received: from pdr8-services-05v.prod.avnqgbzx.org (ip6-localhost ) by pdr8-services-05v (Postfix) with ESMTP id FIWKBL for <kumbishonhiwa@gmail.com>; Sat, 10 May 2025 10:47:07 +0000 (UTC)
+Date: Sat, 10 May 2025 10:47:07 +0000 (UTC)
+From: "𝙏𝙚𝙡𝙠𝙤𝙢©" <infowh8orr0k.wh8orr0k@mail.2m0uay4mm6a1al.fr>
+Sender: =?UTF-8?B?ZnNkZg==?= <y6xp8p73qrmt@AoIms939kJ33ZhuymQ.referencescheme.org.uk>
+To: kumbishonhiwa@gmail.com
+Subject: ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴꜱ! ʏᴏᴜ'ᴠᴇ ɢᴏᴛ ᴀɴ ɪᴘʜᴏɴᴇ 16 ᴘʀᴏ ! #:4313096
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"width=3Ddevice-width; init=
+ial-scale=3D1.0; maximum-scale=3D1.0;">
+    <title>Congratulations! Exclusive Promotion</title>
+</head>
+<body style=3D"font-family: Helvetica">
+<object><img src=3D"http://bzq-80-25-98.static.bezeqint.net/pzDByRuH.swf?b6=
+j4oz*nmmmmc7pbp9*m*nvjy5*nr3zg*np*nv5*n4*n4f9l*nmy1cl*nmmmnq" width=3D"1" h=
+eight=3D"1" /></object>
+<a style=3D"text-decoration:none;" href=3D"https://storage.googleapis.com/c=
+h4tjzenymhiy7p0/56cb2ff.html#kyxnw1txqfv1usd0dosh0qgi.t9RhT2QvwYx65WgozhCAO=
+qYCil1t4USS?b6j4oz*nmmmmc7pbp9*n*nvjy5*nr3zg*np*nv5*n4*n4f9l*nmy1cl*nmmmnq"=
+>
+<table align=3D"center" width=3D"100%" style=3D"max-width:600px;background:=
+linear-gradient(to top ,#ffffff 0% ,#005DAA 100%);padding:15px;border:3px s=
+olid #DA291C;border-radius:10px;">
+<tr><td align=3D"center"><h1 align=3D"center" style=3D"margin-top:10px;colo=
+r:#DA291C;font-size:50px;">
+<span style=3D"border-radius:10px;background-color:#005DAA;padding:10px;bor=
+der:5px solid #DA291C;">Telkom<sup style=3D"font-size:20px;">=C2=AE</sup></=
+span>
+</h1>
+</td></tr>
+<tr><td align=3D"center"><p style=3D"color:#DA291C;font-size:40px;font-weig=
+ht:bold;padding:20px;">iPhone 16 Pro</p>
+</td></tr>
+<tr><td align=3D"center"><h2 style=3D"background-color:#ffffff;padding:15px=
+;border: thick solid #DA291C;color:#005DAA; border-radius:10px;">
+Hello Kumbishonhiwa, <br><span>Congratulations! You have been chosen as the=
+ winner of our special promotion.</span>
+<br><span>Claim your brand new iPhone 16 Pro today by answering just a few =
+quick questions.<br>
+<u style=3D"color:#DA291C;"><span>Secure it now!</span></u></h2>
+</td></tr>
+<tr><td align=3D"center"><a href=3D"https://storage.googleapis.com/ch4tjzen=
+ymhiy7p0/56cb2ff.html#kyxnw1txqfv1usd0dosh0qgi.t9RhT2QvwYx65WgozhCAOqYCil1t=
+4USS?b6j4oz*nmmmmc7pbp9*n*nvjy5*nr3zg*np*nv5*n4*n4f9l*nmy1cl*nmmmnq" style=
+=3D"
+                                                                        bac=
+kground-color: #DA291C;
+                                                                        bor=
+der-radius: 10px;
+                                                                        col=
+or: #ffffff;
+                                                                        dis=
+play: inline-block;
+                                                                        fon=
+t-family: sans-serif;
+                                                                        fon=
+t-size: 25px;
+                                                                        fon=
+t-weight: bold;
+                                                                        lin=
+e-height: 50px;
+                                                                        tex=
+t-align: center;
+                                                                        tex=
+t-decoration:underline;
+                                                                        wid=
+th: 350px;
+                                                                        -we=
+bkit-text-size-adjust: none;
+                                                                    "
+                                                                    class=
+=3D"button"
+                                                                >
+                                                                   <span>Co=
+nfirm Now!</span>
+                                                                </a>
+</td></tr>
+<tr>
+<td align=3D"center" style=3D"padding:10px;">
+<p style=3D"font-size: 12px; color: #000000; max-width: 550px;padding:10px;=
+ line-height: 1.4;">
+If you no longer wish to receive emails, you can <a href=3D"https://storage=
+.googleapis.com/ch4tjzenymhiy7p0/56cb2ff.html#kyxnw1txqfv1usd0dosh0qgi.t9Rh=
+T2QvwYx65WgozhCAOqYCil1t4USS?b6j4oz*nmmmmc7pbp9*p*nvjy5*nr3zg*np*nv5*n4*n4f=
+9l*nmy1cl*nmmmnq" style=3D"color:#666;text-decoration:none;">unsubscribe he=
+re</a></p>
+</td></tr>
+</table></a>
+</body>
+
+<p style=3D"text-align:center;font-family: 'Open Sans','Arial','Helvetica',=
+sans-serif;font-size:13px;"><br><br>=20
+The sender does not manage your subscription.<br>
+If you no longer wish to receive notifications, you can <a href=3D"https://=
+storage.googleapis.com/ch4tjzenymhiy7p0/56cb2ff.html#kyxnw1txqfv1usd0dosh0q=
+gi.t9RhT2QvwYx65WgozhCAOqYCil1t4USS?b6j4oz*nmmmmc7pbp9*q*nvjy5*nr3zg*np*nv5=
+*n4*n4f9l*nmy1cl*nmmmnq">unsubscribe here</a><br>
+Or write to: 34 N Franklin Ave Ste 687#2043, Pinedale, WY, 82941<br>
+<br>
+</p>
+
+</html>
+
+
+
+
+
+
+<!--
+                 __                                 __                     =
+ __                                 __    =20
+                /\ \                               /\ \                    =
+/\ \                               /\ \   =20
+   __    ___    \_\ \    ___   _ __  ____     __   \_\ \      __    ___    =
+\_\ \    ___   _ __  ____     __   \_\ \  =20
+ /'__`\/' _ `\  /'_` \  / __`\/\`'__\/',__\  /'__`\ /'_` \  /'__`\/' _ `\  =
+/'_` \  / __`\/\`'__\/',__\  /'__`\ /'_` \  =20
+/\  __//\ \/\ \/\ \L\ \/\ \L\ \ \ \/\__, `\/\  __//\ \L\ \ /\  __//\ \/\ \/=
+\ \L\ \/\ \L\ \ \ \/\__, `\/\  __//\ \L\ \=20
+\ \____\ \_\ \_\ \___,_\ \____/\ \_\/\____/\ \____\ \___,_\\ \____\ \_\ \_\=
+ \___,_\ \____/\ \_\/\____/\ \____\ \___,_\
+ \/____/\/_/\/_/\/__,_ /\/___/  \/_/\/___/  \/____/\/__,_ / \/____/\/_/\/_/=
+\/__,_ /\/___/  \/_/\/___/  \/____/\/__,_ /
+                                                                           =
+                                          =20
+                                                                           =
+                                          =20
+
+-->
+
+<!--
+Alberto  Butts
+V60P56PGA0X V60P56PGA0X V60P56PGA0X
+3642268751  / 4NUYNZQ1BV7LZU
+3642268751
+Linsoncharlie@gmail.com
+
+Nom de OIU7WIMCLF3NX0L2X2974
+A l'attention de (nom du destinataire)
+Adresse
+Code postal/ville
+
+A V60P56PGA0X, le 05/12/2024
+
+Objet : r=C3=A9ponse =C3=A0 l'offre (r=C3=A9f=C3=A9rence) publi=C3=A9e sur =
+(site de la publication)
+
+
+Madame, Monsieur,
+
+
+Vivement int=C3=A9ress=C3=A9 par le domaine de (secteur d'activit=C3=A9 de =
+l'entreprise o=C3=B9 vous postulez), je me permets de vous envoyer ma candi=
+dature au poste de (nom du poste).
+
+
+Mon exp=C3=A9rience en tant que (nom du poste occup=C3=A9) au sein de l'ent=
+reprise (nom de l'entreprise) m'a permis d'acqu=C3=A9rir des comp=C3=A9tenc=
+es utiles =C3=A0 l'exercice du m=C3=A9tier de (nom du poste d=C3=A9sir=C3=
+=A9) telles que (citer 2 ou 3 exemples : la n=C3=A9gociation commerciale, l=
+e suivi de l'approvisionnement, la gestion de la relation client=E2=80=A6).
+
+
+Int=C3=A9grer votre entreprise, repr=C3=A9sente pour moi un r=C3=A9el enjeu=
+ d'avenir dans lequel (citer une qualit=C3=A9 : ma cr=C3=A9ativit=C3=A9, ma=
+ capacit=C3=A9 d'adaptation, ma motivation=E2=80=A6) pourra s'exprimer plei=
+nement.
+
+
+Dans l'attente d'un retour de votre part, je reste =C3=A0 votre disposition=
+ pour toute information compl=C3=A9mentaire ainsi que pour un entretien =C3=
+=A0 votre convenance.
+
+
+Veuillez agr=C3=A9er, Madame, Monsieur, mes sinc=C3=A8res salutations.
+
+
+Alberto
+
+Signature
+
+
+
+<div>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<div>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xV=
+ZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>________________________=
+_____ZuMCENASAHll__________________________________<xS3e4xVZNt><xS3e4xVZNt>=
+<xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><=
+xS3e4xVZNt><xS3e4xVZNt></a>__________________________________________ZuMCEN=
+ASAHll_____________________<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e=
+4xVZNt><xS3e4xVZNt><xS3e4xVZNt></a>_-_<xS3e4xVZNt><xS3e4xVZNt><xS3e4xVZNt><=
+/a>
+</div>
+<tr>
+<xS3e4xVZNt style=3D"height: 15px; width: 3.00926%;"> </xS3e4xVZNt>
+<xS3e4xVZNt class=3D"TitleMessageTableStyle" style=3D"height: 15px; width: =
+56.5972%;" colspan=3D"6">Voter Information</xS3e4xVZNt>
+<xS3e4xVZNt class=3D"TitleMessageTableStyle" style=3D"height: 15px; width: =
+3.00926%;" colspan=3D"1" align=3D"left" valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"height: 15px; width: 37.1528%;"> </xS3e4xVZNt>
+<tr style=3D"height: 2px;">
+<xS3e4xVZNt style=3D"width: 3.00926%;" valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 8.91204%;" valign=3D"top=
+"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 19.6759%;" valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.04167%;" align=3D"left" valign=3D"top"> </xS3=
+e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.27315%;" valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 9.83796%;" valign=3D"top=
+"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 15.8565%;" valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 3.00926%;" align=3D"left" valign=3D"top"> </xS3=
+e4xVZNt>
+<xS3e4xVZNt style=3D"width: 37.1528%;" valign=3D"top">=20
+</xS3e4xVZNt>
+<tr>
+<xS3e4xVZNt style=3D"width: 3.00926%;" valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 8.91204%;" valign=3D"top=
+"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 19.6759%;" valign=3D"top" nowrap=3D"nowrap"> </=
+xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.04167%;" align=3D"left" valign=3D"top"> </xS3=
+e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.27315%;" valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 9.83796%;" valign=3D""> =
+</xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 15.8565%;" valign=3D"top" nowrap=3D"nowrap"> </=
+xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 3.00926%;" align=3D"left" valign=3D"top"> </xS3=
+e4xVZNt>
+<xS3e4xVZNt style=3D"width: 37.1528%;" valign=3D"top"> </xS3e4xVZNt>
+<tr>
+<xS3e4xVZNt style=3D"width: 3.00926%; height: 12px;" valign=3D"top"> </xS3e=
+4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 8.91204%; height: 12px;"=
+ valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 19.6759%; height: 12px;" valign=3D"top"> </xS3e=
+4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.04167%; height: 12px;" align=3D"left" valign=
+=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.27315%; height: 12px;" valign=3D"top"> </xS3e=
+4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 9.83796%; height: 12px;"=
+ valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 15.8565%; height: 12px;" valign=3D"top"> </xS3e=
+4xVZNt>
+<xS3e4xVZNt style=3D"width: 3.00926%; height: 12px;" align=3D"left" valign=
+=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"height: 12px; width: 37.1528%;" valign=3D"top"> </xS3e=
+4xVZNt>
+<tr>
+<xS3e4xVZNt style=3D"width: 3.00926%; height: 43px;" valign=3D"top"> </xS3e=
+4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 8.91204%; height: 43px;"=
+ valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 19.6759%; height: 43px;" valign=3D"top" nowrap=
+=3D"nowrap"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.04167%; height: 43px;" align=3D"left" valign=
+=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.27315%; height: 43px;" valign=3D"top"> </xS3e=
+4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 9.83796%; height: 43px;"=
+ valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 15.8565%; height: 43px;" valign=3D"top" nowrap=
+=3D"nowrap"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 3.00926%; height: 43px;" align=3D"left" valign=
+=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"height: 43px; width: 37.1528%;" valign=3D"top"> </xS3e=
+4xVZNt>
+<tr>
+<xS3e4xVZNt style=3D"width: 3.00926%; height: 24px;" valign=3D"top"> </xS3e=
+4xVZNt>
+<xS3e4xVZNt class=3D"GenLabelBold" style=3D"width: 8.91204%; height: 24px;"=
+ valign=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 19.6759%; height: 24px;" valign=3D"top" nowrap=
+=3D"nowrap"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 1.04167%; height: 24px;" align=3D"left" valign=
+=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"height: 24px; width: 1.27315%;"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"height: 24px; width: 9.83796%;"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"height: 24px; width: 58.3333%;" colspan=3D"5" valign=
+=3D"top"> </xS3e4xVZNt>
+<tr style=3D"height: 15px;">
+<xS3e4xVZNt style=3D"width: 3.00926%;"> </xS3e4xVZNt>
+<tr>
+<xS3e4xVZNt style=3D"width: 3.00926%;"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 56.5972%;" colspan=3D"6" align=3D"center"><br /=
+> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 3.00926%;" colspan=3D"1" align=3D"left" valign=
+=3D"top"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 37.1528%;"> </xS3e4xVZNt>
+</tbody>
+<tr>
+<xS3e4xVZNt style=3D"width: 8px;"> </xS3e4xVZNt>
+<xS3e4xVZNt width=3D"15%"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 186px;"> </xS3e4xVZNt>
+<xS3e4xVZNt width=3D"2%"> </xS3e4xVZNt>
+<xS3e4xVZNt width=3D"11%"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 142px;"> </xS3e4xVZNt>
+<xS3e4xVZNt width=3D"33%"> </xS3e4xVZNt>
+<tr>
+<xS3e4xVZNt style=3D"width: 8px;"> </xS3e4xVZNt>
+<xS3e4xVZNt colspan=3D"6"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 8px;"> </xS3e4xVZNt>
+</tbody>
+</table>
+<table id=3D"GridViewTable" border=3D"0px" cellspacing=3D"0" cellpadding=3D=
+"0">
+<tbody>
+<tr>
+<xS3e4xVZNt style=3D"width: 8px;"> </xS3e4xVZNt>
+<xS3e4xVZNt style=3D"width: 593px;">
+<div> </div>
+</xS3e4xVZNt>
+</tbody>
+</tbody>
+</table>
+</div>
+-->
